@@ -46,7 +46,7 @@
     
     <title>
         
-            Hello World | 
+            CS231n 笔记5：训练神经网络I | 
         
         夏の紫苑
     </title>
@@ -218,7 +218,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="夏の紫苑">
-    <meta name="msapplication-starturl" content="https://natsunoshion.github.io/2023/09/04/hello-world/">
+    <meta name="msapplication-starturl" content="https://natsunoshion.github.io/2023/09/05/CS231n-%E7%AC%94%E8%AE%B05%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CI/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="夏の紫苑">
@@ -233,16 +233,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://natsunoshion.github.io/2023/09/04/hello-world/">
+    <meta property="og:url" content="https://natsunoshion.github.io/2023/09/05/CS231n-%E7%AC%94%E8%AE%B05%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CI/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Hello World | 夏の紫苑">
+    <meta property="og:title" content="CS231n 笔记5：训练神经网络I | 夏の紫苑">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="">
     
 
     
-        <meta property="article:published_time" content="Mon Sep 04 2023 22:41:50 GMT+0800">
-        <meta property="article:modified_time" content="Mon Sep 04 2023 22:41:50 GMT+0800">
+        <meta property="article:published_time" content="Tue Sep 05 2023 20:22:00 GMT+0800">
+        <meta property="article:modified_time" content="Tue Sep 05 2023 20:56:33 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -250,7 +250,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://natsunoshion.github.io/2023/09/04/hello-world/index.html" />
+        <link rel="canonical" href="https://natsunoshion.github.io/2023/09/05/CS231n-%E7%AC%94%E8%AE%B05%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CI/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -262,10 +262,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "https://natsunoshion.github.io/2023/09/04/hello-world/index.html",
-    "headline": "Hello World",
-    "datePublished": "Mon Sep 04 2023 22:41:50 GMT+0800",
-    "dateModified": "Mon Sep 04 2023 22:41:50 GMT+0800",
+    "mainEntityOfPage": "https://natsunoshion.github.io/2023/09/05/CS231n-%E7%AC%94%E8%AE%B05%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CI/index.html",
+    "headline": "CS231n 笔记5：训练神经网络I",
+    "datePublished": "Tue Sep 05 2023 20:22:00 GMT+0800",
+    "dateModified": "Tue Sep 05 2023 20:56:33 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "natsunoshion",
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Quick-Start"><span class="post-toc-number">1.</span> <span class="post-toc-text">Quick Start</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Create-a-new-post"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Create a new post</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Run-server"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Run server</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generate-static-files"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Generate static files</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Deploy-to-remote-sites"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0"><span class="post-toc-number">1.</span> <span class="post-toc-text">激活函数</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86"><span class="post-toc-number">2.</span> <span class="post-toc-text">数据预处理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%9D%83%E9%87%8D%E5%88%9D%E5%A7%8B%E5%8C%96"><span class="post-toc-number">3.</span> <span class="post-toc-text">权重初始化</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#BN-%E5%B1%82"><span class="post-toc-number">4.</span> <span class="post-toc-text">BN 层</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0%E8%BF%87%E7%A8%8B"><span class="post-toc-number">5.</span> <span class="post-toc-text">监督学习过程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%B6%85%E5%8F%82%E6%95%B0%E4%BC%98%E5%8C%96"><span class="post-toc-number">6.</span> <span class="post-toc-text">超参数优化</span></a></li></ol>
     </ul>
     
 
@@ -381,7 +381,7 @@
         
     
             <p class="article-headline-p">
-                Hello World
+                CS231n 笔记5：训练神经网络I
             </p>
         </div>
 
@@ -400,7 +400,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>natsunoshion</strong>
-        <span>9月 04, 2023</span>
+        <span>9月 05, 2023</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -432,7 +432,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Hello World&url=https://natsunoshion.github.io/2023/09/04/hello-world/index.html&pic=https://natsunoshion.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=CS231n 笔记5：训练神经网络I&url=https://natsunoshion.github.io/2023/09/05/CS231n-%E7%AC%94%E8%AE%B05%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CI/index.html&pic=https://natsunoshion.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -441,7 +441,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Hello World&url=https://natsunoshion.github.io/2023/09/04/hello-world/index.html&via=natsunoshion" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=CS231n 笔记5：训练神经网络I&url=https://natsunoshion.github.io/2023/09/05/CS231n-%E7%AC%94%E8%AE%B05%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CI/index.html&via=natsunoshion" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -450,7 +450,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://natsunoshion.github.io/2023/09/04/hello-world/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://natsunoshion.github.io/2023/09/05/CS231n-%E7%AC%94%E8%AE%B05%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CI/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -459,7 +459,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=https://natsunoshion.github.io/2023/09/04/hello-world/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://natsunoshion.github.io/2023/09/05/CS231n-%E7%AC%94%E8%AE%B05%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CI/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -484,15 +484,89 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+        <h2 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h2><p><img src="https://i.imgur.com/Z4iKZnX.png" alt=""></p>
+<ul>
+<li>Sigmoid：<script type="math/tex; mode=display">\frac{1}{1+e^{-x}}</script>特点：<ul>
+<li>“饱和”现象会让梯度消失</li>
+<li>不以 0 中心：这样导致下一层神经元的输入偏向于正值，假设中间某层神经元有<script type="math/tex; mode=display">\text{Output} = f(\sum_i w_i x_i+b)</script>其中 $f$ 为激活函数，则该层参数 $w_i$ 梯度为<script type="math/tex; mode=display">\begin{aligned}\frac{\partial L}{\partial w_i} &= \frac{\partial L}{\partial f} \frac{\partial f}{\partial (\sum_i w_i x_i+b)} \frac{\partial (\sum_i w_i x_i+b)}{\partial w_i} \\&= \frac{\partial L}{\partial f} \frac{\partial f}{\partial (\sum_i w_i x_i+b)} x_i\end{aligned}</script>注意到 $\frac{\partial f}{\partial (\sum_i w_i x_i+b)}$ 和 $x_i$ 均恒为正数，故其 $w_i$ 的梯度始终与前面的梯度 $\frac{\partial L}{\partial f}$ 的符号相同。假设该神经元中有两个参数 $w_0, w_1$ 都希望达到最优解，而最优解一个比 $w_0$ 大，一个比 $w_1$ 小，而两者只能向同一方向移动，也就会导致学习路线曲折，收敛速度慢：<img src="https://i.imgur.com/A8BOggW.png" alt=""></li>
+<li>指数函数计算开销较大</li>
+</ul>
+</li>
+<li>tanh：以 0 为中心，但仍然会饱和</li>
+<li>ReLU：<ul>
+<li>优点：不饱和、计算高效、收敛速度快、生理学上合理</li>
+<li>缺点：不以 0 为中心、小于 0 时依然有梯度消失的问题（<strong>坏死现象</strong>：如果权重初始得不好或者学习率过大，导致某个神经元传给 ReLU 的值小于 0，进而梯度为 0，无法更新参数，神经元坏死）</li>
+<li>解决方法：设置偏置项，或使用 Leaky ReLU、ELU 等</li>
+</ul>
+</li>
+</ul>
+<p>总结：</p>
+<ul>
+<li>使用 ReLU，设置好的学习率</li>
+<li>使用 Leaky ReLU 或 ELU 或 Maxout</li>
+<li>使用 tanh（但这大概率不好）</li>
+<li>不要用 Sigmoid</li>
+</ul>
+<h2 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h2><ol>
+<li>数据处理：一般处理至以 0 为中心，而不需要归一化，因为图像像素值都处于差不多的范围内。当然也不会做 PCA 之类的处理，这是为了保留图像的原结构。</li>
+<li>在测试和训练时都会减去中心图像。在训练开始前进行数据预处理操作（也可以采样得到均值）。</li>
+<li>两种方法：<ol>
+<li>图像去均值：<strong>先求出中心图像 image</strong>，这个图像是 $H\times W\times 3$ 的，然后每个图像减去中心图像。</li>
+<li>通道去均值：<strong>先求出每个通道的均值</strong>，得到<strong>三个数</strong>，然后每个图像的每个通道的每个像素都减去对应通道的值即可。</li>
+</ol>
+</li>
+</ol>
+<h2 id="权重初始化"><a href="#权重初始化" class="headerlink" title="权重初始化"></a>权重初始化</h2><ul>
+<li>不能全 0，不能全相同值（参数对称问题）</li>
+<li>不能全部初始化为小的随机数（激活值逐渐消失 $\rightarrow$ 梯度消失）</li>
+<li>也不能全部很大，否则会饱和</li>
+</ul>
+<p>结论：</p>
+<ul>
+<li>使用 tanh 作为激活函数时，使用 <strong>Xavier 初始化</strong>——从标准高斯取样，并根据输入数量进行缩放；使用 ReLU 作为激活函数，则还需额外除 2（因为一半的神经元失活）</li>
+<li>核心：输入数据方差=输出数据方差</li>
+<li>如何初始化权重问题依然活跃，一般从 Xavier 开始尝试，然后再尝试其他方法</li>
+</ul>
+<h2 id="BN-层"><a href="#BN-层" class="headerlink" title="BN 层"></a>BN 层</h2><p>一般在全连接层（或者卷积层）后，激活函数前。</p>
+<p><img src="https://i.imgur.com/Z5CIo4c.png" alt=""></p>
+<p>对于每一批输入 X，对每一维进行<strong>归一化</strong>。</p>
+<p><img src="https://i.imgur.com/GdDJkri.png" alt=""></p>
+<p>通过引入学习参数 $\beta$ 和 $\gamma$，提升灵活度（控制饱和的量）：</p>
+<p><img src="https://i.imgur.com/SOGqqQw.png" alt=""></p>
+<h2 id="监督学习过程"><a href="#监督学习过程" class="headerlink" title="监督学习过程"></a>监督学习过程</h2><ol>
+<li>数据预处理</li>
+<li>选择神经网络结构</li>
+<li>初始化网络：<ul>
+<li>完整性检查<ul>
+<li>检查损失函数的初始值</li>
+<li>加入正则项，再检查损失函数</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>开始训练：<ol>
+<li>从小的数据集开始，关闭正则项，确保 loss 可能降至接近 0</li>
+<li>开启正则项，寻找合适的学习率：<ul>
+<li>如果 loss 基本不变 $\rightarrow$ 学习率太低（这里可能 acc 突变，因为可能突然选中正确的，例如各分类的 Sigmoid 值为 0.11，0.1，0.1，0.1，…，0.1，损失函数基本不变，但 acc升高）</li>
+<li>如果 loss 到了 NaN $\rightarrow$ 学习率太高</li>
+<li>一般设置在 1e-3 ~ 1e-5 之间</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="超参数优化"><a href="#超参数优化" class="headerlink" title="超参数优化"></a>超参数优化</h2><p>最好的值应当在区间的中间，不应在采样边缘。</p>
+<p>网格搜索 vs. 随机搜索：</p>
+<p><img src="https://i.imgur.com/y6CtauG.png" alt=""></p>
+<p><strong>随机搜索</strong>更好（如上绿色部分的函数）。</p>
+<p>这里红色的 loss 变化最好。</p>
+<p><img src="https://i.imgur.com/P59fmBI.png" alt=""></p>
+<p>下面这个图说明网络的初始值不好。</p>
+<p><img src="https://i.imgur.com/mSYN0xo.png" alt=""></p>
+<ul>
+<li>还有可能过拟合，可以增大正则化权重</li>
+<li>最后，还可以记录 $w$ 更新的幅度，幅度（使用范数比较）为 0.01 差不多比较好</li>
+</ul>
 
         
     
@@ -513,19 +587,19 @@
             <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
     <!-- Prev Nav -->
     
-        <a href="/2023/09/05/CS231n-%E7%AC%94%E8%AE%B01%EF%BC%9A%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
 
     <!-- Section Spacer -->
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2023/09/05/CS231n-%E7%AC%94%E8%AE%B04%EF%BC%9A%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
