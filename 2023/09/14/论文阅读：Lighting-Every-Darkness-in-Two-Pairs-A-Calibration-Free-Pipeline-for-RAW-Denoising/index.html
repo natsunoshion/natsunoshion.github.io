@@ -46,7 +46,7 @@
     
     <title>
         
-            归档: 2023 | 
+            论文阅读：Lighting Every Darkness in Two Pairs: A Calibration-Free Pipeline for RAW Denoising | 
         
         夏の紫苑
     </title>
@@ -218,7 +218,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="夏の紫苑">
-    <meta name="msapplication-starturl" content="https://natsunoshion.github.io/archives/2023/">
+    <meta name="msapplication-starturl" content="https://natsunoshion.github.io/2023/09/14/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ALighting-Every-Darkness-in-Two-Pairs-A-Calibration-Free-Pipeline-for-RAW-Denoising/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="夏の紫苑">
@@ -233,13 +233,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="https://natsunoshion.github.io/archives/2023/">
+    <meta property="og:url" content="https://natsunoshion.github.io/2023/09/14/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ALighting-Every-Darkness-in-Two-Pairs-A-Calibration-Free-Pipeline-for-RAW-Denoising/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="归档: 2023 | 夏の紫苑">
+    <meta property="og:title" content="论文阅读：Lighting Every Darkness in Two Pairs: A Calibration-Free Pipeline for RAW Denoising | 夏の紫苑">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="">
     
 
+    
+        <meta property="article:published_time" content="Thu Sep 14 2023 01:39:40 GMT+0800">
+        <meta property="article:modified_time" content="Thu Sep 14 2023 01:41:19 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -247,13 +250,43 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="https://natsunoshion.github.io/archives/2023/index.html" />
+        <link rel="canonical" href="https://natsunoshion.github.io/2023/09/14/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ALighting-Every-Darkness-in-Two-Pairs-A-Calibration-Free-Pipeline-for-RAW-Denoising/index.html" />
     
 
     <!-- Structured-data for SEO -->
     
         
 
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": "https://natsunoshion.github.io/2023/09/14/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ALighting-Every-Darkness-in-Two-Pairs-A-Calibration-Free-Pipeline-for-RAW-Denoising/index.html",
+    "headline": "论文阅读：Lighting Every Darkness in Two Pairs: A Calibration-Free Pipeline for RAW Denoising",
+    "datePublished": "Thu Sep 14 2023 01:39:40 GMT+0800",
+    "dateModified": "Thu Sep 14 2023 01:41:19 GMT+0800",
+    "author": {
+        "@type": "Person",
+        "name": "natsunoshion",
+        "image": {
+            "@type": "ImageObject",
+            "url": "/img/avatar.png"
+        },
+        "description": "Hi, nice to meet you"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "夏の紫苑",
+        "logo": {
+            "@type":"ImageObject",
+            "url": "/img/favicon.png"
+        }
+    },
+    "keywords": "",
+    "description": "",
+}
+</script>
 
 
     
@@ -287,541 +320,240 @@
                         </button>
                     
 
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
+                    <!-- Post TOC -->
 
-    <!-- Pin on top -->
+    
+    <!-- Back Button -->
+    <!--
+    <div class="material-back" id="backhome-div" tabindex="0">
+        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
+           href="#" onclick="window.history.back();return false;"
+           target="_self"
+           role="button"
+           data-upgraded=",MaterialButton,MaterialRipple">
+            <i class="material-icons" role="presentation">arrow_back</i>
+            <span class="mdl-button__ripple-container">
+                <span class="mdl-ripple"></span>
+            </span>
+        </a>
+    </div>
+    -->
+
+
+    <!-- Left aligned menu below button -->
+    
+    
+    <button id="post-toc-trigger-btn"
+        class="mdl-button mdl-js-button mdl-button--icon">
+        <i class="material-icons">format_list_numbered</i>
+    </button>
+
+    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-%E5%85%88%E5%89%8D%E7%9A%84%E4%B8%8D%E8%B6%B3%E5%92%8C%E5%8A%A8%E6%9C%BA"><span class="post-toc-number">1.</span> <span class="post-toc-text">3.1 先前的不足和动机</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-%E9%A2%84%E8%AE%AD%E7%BB%83"><span class="post-toc-number">2.</span> <span class="post-toc-text">3.2 预训练</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%BE%AE%E8%B0%83"><span class="post-toc-number">3.</span> <span class="post-toc-text">微调</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%83%A8%E7%BD%B2"><span class="post-toc-number">4.</span> <span class="post-toc-text">部署</span></a></li></ol>
+    </ul>
     
 
-    <!-- Normal Post -->
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
+
+
+
+<!-- Layouts -->
+
+    <!-- Post Module -->
+    <div class="material-post_container">
+
+        <div class="material-post mdl-grid">
+            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+
+                <!-- Post Header(Thumbnail & Title) -->
+                
+    <!-- Paradox Post Header -->
     
         
             <!-- Random Thumbnail -->
             <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
+            <script type="text/ls-javascript" id="post-thumbnail-script">
+    var randomNum = Math.floor(Math.random() * 19 + 1);
 
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2023/09/14/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ALighting-Every-Darkness-in-Two-Pairs-A-Calibration-Free-Pipeline-for-RAW-Denoising/">论文阅读：Lighting Every Darkness in Two Pairs: A Calibration-Free Pipeline for RAW Denoising</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            论文 PDF：Lighting Every Darkn...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2023/09/14/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ALighting-Every-Darkness-in-Two-Pairs-A-Calibration-Free-Pipeline-for-RAW-Denoising/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="natsunoshion's avatar">
-            </div>
-            <div>
-                <strong>natsunoshion</strong>
-                <span>9月 14, 2023</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2023/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ANuI-Go-Recursive-Non-Local-Encoder-Decoder-Network-for-Retinal-Image-Non-Uniform-Illumination-Removal/">论文阅读：NuI-Go: Recursive Non-Local Encoder-Decoder Network for Retinal Image Non-Uniform Illumination Removal</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            论文 PDF：NuI-Go: Recursive No...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2023/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ANuI-Go-Recursive-Non-Local-Encoder-Decoder-Network-for-Retinal-Image-Non-Uniform-Illumination-Removal/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="natsunoshion's avatar">
-            </div>
-            <div>
-                <strong>natsunoshion</strong>
-                <span>9月 11, 2023</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2023/09/11/CS231n-%E7%AC%94%E8%AE%B06%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CII/">CS231n-笔记6：训练神经网络II</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            前情提要
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2023/09/11/CS231n-%E7%AC%94%E8%AE%B06%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CII/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="natsunoshion's avatar">
-            </div>
-            <div>
-                <strong>natsunoshion</strong>
-                <span>9月 11, 2023</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2023/09/05/CS231n-%E7%AC%94%E8%AE%B05%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CI/">CS231n 笔记5：训练神经网络I</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            激活函数
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2023/09/05/CS231n-%E7%AC%94%E8%AE%B05%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CI/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="natsunoshion's avatar">
-            </div>
-            <div>
-                <strong>natsunoshion</strong>
-                <span>9月 05, 2023</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2023/09/05/CS231n-%E7%AC%94%E8%AE%B04%EF%BC%9A%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">CS231n 笔记4：卷积神经网络</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            之前...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2023/09/05/CS231n-%E7%AC%94%E8%AE%B04%EF%BC%9A%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="natsunoshion's avatar">
-            </div>
-            <div>
-                <strong>natsunoshion</strong>
-                <span>9月 05, 2023</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2023/09/05/CS231n-%E7%AC%94%E8%AE%B03%EF%BC%9A%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%BB%8B%E7%BB%8D/">CS231n 笔记3：神经网络介绍</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            后向传播
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2023/09/05/CS231n-%E7%AC%94%E8%AE%B03%EF%BC%9A%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%BB%8B%E7%BB%8D/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="natsunoshion's avatar">
-            </div>
-            <div>
-                <strong>natsunoshion</strong>
-                <span>9月 05, 2023</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2023/09/05/CS231n-%E7%AC%94%E8%AE%B02%EF%BC%9A%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E4%B8%8E%E4%BC%98%E5%8C%96%E5%99%A8/">CS231n 笔记2：损失函数与优化器</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            损失函数
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2023/09/05/CS231n-%E7%AC%94%E8%AE%B02%EF%BC%9A%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E4%B8%8E%E4%BC%98%E5%8C%96%E5%99%A8/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="natsunoshion's avatar">
-            </div>
-            <div>
-                <strong>natsunoshion</strong>
-                <span>9月 05, 2023</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2023/09/05/CS231n-%E7%AC%94%E8%AE%B01%EF%BC%9A%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/">CS231n 笔记1：图像分类</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            KNN
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2023/09/05/CS231n-%E7%AC%94%E8%AE%B01%EF%BC%9A%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="natsunoshion's avatar">
-            </div>
-            <div>
-                <strong>natsunoshion</strong>
-                <span>9月 05, 2023</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-        
-            
-                <!-- Paradox Thumbnail -->
-                <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2023/09/04/hello-world/">Hello World</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            Welcome to Hexo! This is your very first po...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2023/09/04/hello-world/" target="_self">阅读全文</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="natsunoshion's avatar">
-            </div>
-            <div>
-                <strong>natsunoshion</strong>
-                <span>9月 04, 2023</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-          
-
-            
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-            
-            
-        
-    
-
-    
-
-    
-        <script type="text/ls-javascript" id="thumbnail-script">
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
+    $('.post_thumbnail-random').attr('data-original', '/img/random/material-' + randomNum + '.png');
     $('.post_thumbnail-random').addClass('lazy');
-
-        locatePost = locatePost.next();
-    }
 </script>
 
+        
+    
+            <p class="article-headline-p">
+                论文阅读：Lighting Every Darkness in Two Pairs: A Calibration-Free Pipeline for RAW Denoising
+            </p>
+        </div>
+
+
+
+
+
+                
+                    <!-- Paradox Post Info -->
+                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+
+    <!-- Author Avatar -->
+    <div id="author-avatar">
+        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
+    </div>
+    <!-- Author Name & Date -->
+    <div>
+        <strong>natsunoshion</strong>
+        <span>9月 14, 2023</span>
+    </div>
+
+    <div class="section-spacer"></div>
+
+    <!-- Favorite -->
+    <!--
+        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
+            <i class="material-icons" role="presentation">favorite</i>
+            <span class="visuallyhidden">favorites</span>
+        </button>
+    -->
+
+    <!-- Qrcode -->
+    
+
+    <!-- Tags (bookmark) -->
+    
+
+    <!-- Share -->
+    
+        <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+    <i class="material-icons" role="presentation">share</i>
+    <span class="visuallyhidden">share</span>
+</button>
+<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
+    
+
+    
+
+    <!-- Share Weibo -->
+    
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=论文阅读：Lighting Every Darkness in Two Pairs: A Calibration-Free Pipeline for RAW Denoising&url=https://natsunoshion.github.io/2023/09/14/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ALighting-Every-Darkness-in-Two-Pairs-A-Calibration-Free-Pipeline-for-RAW-Denoising/index.html&pic=https://natsunoshion.github.io/img/favicon.png&searchPic=false&style=simple" target="_blank">
+            <li class="mdl-menu__item">
+                分享到微博
+            </li>
+        </a>
+    
+
+    <!-- Share Twitter -->
+    
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=论文阅读：Lighting Every Darkness in Two Pairs: A Calibration-Free Pipeline for RAW Denoising&url=https://natsunoshion.github.io/2023/09/14/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ALighting-Every-Darkness-in-Two-Pairs-A-Calibration-Free-Pipeline-for-RAW-Denoising/index.html&via=natsunoshion" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Twitter
+            </li>
+        </a>
+    
+
+    <!-- Share Facebook -->
+    
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=https://natsunoshion.github.io/2023/09/14/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ALighting-Every-Darkness-in-Two-Pairs-A-Calibration-Free-Pipeline-for-RAW-Denoising/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Facebook
+            </li>
+        </a>
+    
+
+    <!-- Share Google+ -->
+    
+        <a class="post_share-link" href="https://plus.google.com/share?url=https://natsunoshion.github.io/2023/09/14/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ALighting-Every-Darkness-in-Two-Pairs-A-Calibration-Free-Pipeline-for-RAW-Denoising/index.html" target="_blank">
+            <li class="mdl-menu__item">
+                分享到 Google+
+            </li>
+        </a>
+    
+
+    <!-- Share LinkedIn -->
+    
+
+    <!-- Share QQ -->
+    
+
+    <!-- Share Telegram -->
+    
+</ul>
+
     
 </div>
+
+                
+
+                <!-- Post Content -->
+                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
+    
+        <p>论文 PDF：<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2308.03448.pdf">Lighting Every Darkness in Two Pairs: A Calibration-Free Pipeline for RAW Denoising</a></p>
+<p>以往的模型：</p>
+<p>问题：</p>
+<ol>
+<li>数据采集需要稳定光照，耗时耗劳动力</li>
+<li>某个特定相机的去噪网络很难适用于其他相机</li>
+<li>可能不包括特定的噪声分布，合成噪声和真实噪声有区别</li>
+</ol>
+<p>提出的模型：</p>
+<ol>
+<li>不需要校准数据（解决问题 1）</li>
+<li>预训练+微调框架（解决问题 2）</li>
+<li>提出 Reparameterized Noise Removal (RepNR) block 和 camera-specific alignments (CSA)（解决问题 3）</li>
+</ol>
+<p><img src="https://i.imgur.com/9LcZ3LB.png" alt=""></p>
+<h3 id="3-1-先前的不足和动机"><a href="#3-1-先前的不足和动机" class="headerlink" title="3.1 先前的不足和动机"></a>3.1 先前的不足和动机</h3><p>基本重讲了一遍，附带有公式。</p>
+<h3 id="3-2-预训练"><a href="#3-2-预训练" class="headerlink" title="3.2 预训练"></a>3.2 预训练</h3><p>使用虚拟相机预训练，更快适应不同相机。</p>
+<p>有 m 个虚拟相机，k-path。</p>
+<p><img src="https://i.imgur.com/fBSv5Dx.png" alt=""></p>
+<p>第 k 通道。</p>
+<h3 id="微调"><a href="#微调" class="headerlink" title="微调"></a>微调</h3><p>微调以适应<strong>实际噪声</strong>。</p>
+<ul>
+<li>只用 6 对原始数据</li>
+<li>$3\times 3$ 卷积不再改动</li>
+<li>CSA 的初始化：（IMNR）<script type="math/tex">CSA^T = \frac{1}{m}\sum_{i=1}^{m}{CSA^i}</script></li>
+<li>In-model 噪声和 out-of-model 噪声，如前图所示，上面的 $3\times 3$ 卷积是 in-model 噪声处理方法，也就是 OMNR</li>
+<li>先训练 IMNR 再训练 OMNR</li>
+</ul>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><p>使用结构重参数化技术，能够在部署时转为 $3\times 3$ 卷积部署。</p>
+<p><img src="https://i.imgur.com/hQ5O2I7.png" alt=""></p>
+<p>因此部署代价不会增大。</p>
+
+        
+    
+
+    
+</div>
+
+
+                
+
+                <!-- Post Comments -->
+                
+                    
+                
+            </div>
+
+            <!-- Post Prev & Next Nav -->
+            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+    <!-- Prev Nav -->
+    
+
+    <!-- Section Spacer -->
+    <div class="section-spacer"></div>
+
+    <!-- Next Nav -->
+    
+        <a href="/2023/09/11/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ANuI-Go-Recursive-Non-Local-Encoder-Decoder-Network-for-Retinal-Image-Non-Uniform-Illumination-Removal/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
+    
+</nav>
+
+        </div>
+    </div>
+
 
 
                     

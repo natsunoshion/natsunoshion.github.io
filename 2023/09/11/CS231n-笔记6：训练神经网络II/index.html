@@ -242,7 +242,7 @@
 
     
         <meta property="article:published_time" content="Mon Sep 11 2023 22:37:38 GMT+0800">
-        <meta property="article:modified_time" content="Mon Sep 11 2023 22:41:06 GMT+0800">
+        <meta property="article:modified_time" content="Thu Sep 14 2023 01:42:07 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -265,7 +265,7 @@
     "mainEntityOfPage": "https://natsunoshion.github.io/2023/09/11/CS231n-%E7%AC%94%E8%AE%B06%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CII/index.html",
     "headline": "CS231n-笔记6：训练神经网络II",
     "datePublished": "Mon Sep 11 2023 22:37:38 GMT+0800",
-    "dateModified": "Mon Sep 11 2023 22:41:06 GMT+0800",
+    "dateModified": "Thu Sep 14 2023 01:42:07 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "natsunoshion",
@@ -349,7 +349,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%89%8D%E6%83%85%E6%8F%90%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">前情提要</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%9B%B4%E5%A5%BD%E7%9A%84%E4%BC%98%E5%8C%96"><span class="post-toc-number">2.</span> <span class="post-toc-text">更好的优化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SGD-%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">SGD 存在的问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%8A%A8%E9%87%8F"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">动量</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%AD%A3%E5%88%99%E5%8C%96"><span class="post-toc-number">3.</span> <span class="post-toc-text">正则化</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%89%8D%E6%83%85%E6%8F%90%E8%A6%81"><span class="post-toc-number">1.</span> <span class="post-toc-text">前情提要</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%9B%B4%E5%A5%BD%E7%9A%84%E4%BC%98%E5%8C%96"><span class="post-toc-number">2.</span> <span class="post-toc-text">更好的优化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SGD-%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">SGD 存在的问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%8A%A8%E9%87%8F"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">动量</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Adagrad"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">Adagrad</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#RMSProp"><span class="post-toc-number">2.4.</span> <span class="post-toc-text">RMSProp</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Adam"><span class="post-toc-number">2.5.</span> <span class="post-toc-text">Adam</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BA%8C%E9%98%B6%E4%BC%98%E5%8C%96%E6%96%B9%E6%B3%95"><span class="post-toc-number">2.6.</span> <span class="post-toc-text">二阶优化方法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%80%BB%E7%BB%93"><span class="post-toc-number">2.7.</span> <span class="post-toc-text">总结</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%AD%A3%E5%88%99%E5%8C%96"><span class="post-toc-number">3.</span> <span class="post-toc-text">正则化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%A8%A1%E5%9E%8B%E9%9B%86%E6%88%90"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">模型集成</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%AD%A3%E5%88%99%E9%A1%B9"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">正则项</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Dropout-%E5%B1%82"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">Dropout 层</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#BN-%E5%B1%82"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">BN 层</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">数据增强</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DropConnect"><span class="post-toc-number">3.6.</span> <span class="post-toc-text">DropConnect</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%88%86%E6%95%B0%E9%98%B6%E6%9C%80%E5%A4%A7%E5%80%BC%E6%B1%A0%E5%8C%96"><span class="post-toc-number">3.7.</span> <span class="post-toc-text">分数阶最大值池化</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%9A%8F%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%B7%B1%E5%BA%A6"><span class="post-toc-number">3.8.</span> <span class="post-toc-text">随机网络深度</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%BF%81%E7%A7%BB%E5%AD%A6%E4%B9%A0"><span class="post-toc-number">4.</span> <span class="post-toc-text">迁移学习</span></a></li></ol>
     </ul>
     
 
@@ -497,7 +497,87 @@
 <p><img src="https://i.imgur.com/biXwE9n.png" alt=""></p>
 <p>可以理解为模拟了一个物理引擎。</p>
 <p><img src="https://i.imgur.com/ZMgFfEH.png" alt=""></p>
-<h2 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h2>
+<p>速度一般初始化为 0。</p>
+<p><strong>Nesterov Momentum</strong>：改进的动量，可以看见 $\alpha$ 的位置变了。</p>
+<p><img src="https://i.imgur.com/pD4I4Ho.png" alt=""></p>
+<p><img src="https://i.imgur.com/xbLsJIz.png" alt=""></p>
+<blockquote>
+<ol>
+<li>在传统的动量优化中，我们首先计算该点的梯度，然后用梯度去修正当前的速度，得到二者的复合值作为实际前件的步长方向。</li>
+<li>在 Nesterov 中，我们首先按照现有的速度前进一下，然后计算前进后的点的梯度，再用这个梯度做矫正进一步走到最终正确的位置。</li>
+</ol>
+</blockquote>
+<p><img src="https://i.imgur.com/8eUgc7J.png" alt=""></p>
+<p>Overshooting 现象：跑过头了，随后再返回至最低点。</p>
+<h3 id="Adagrad"><a href="#Adagrad" class="headerlink" title="Adagrad"></a>Adagrad</h3><p><img src="https://i.imgur.com/IUHitrG.png" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">adagrad_2d</span>(<span class="params">x1, x2, s1, s2</span>):</span><br><span class="line">    eps = <span class="number">1e-6</span></span><br><span class="line">    g1, g2 = <span class="number">0.2</span> * x1, <span class="number">4</span> * x2</span><br><span class="line">    sl += gl**<span class="number">2</span></span><br><span class="line">    s2 += g2**<span class="number">2</span></span><br><span class="line">    x1 -= eta / math.sqrt(s1 + eps) * gl</span><br><span class="line">    x2 -= eta / math.sqrt(s2 + eps) * g2</span><br><span class="line">    <span class="keyword">return</span> x1, x2, sl, s2</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">f_2d</span>(<span class="params">x1, x2</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0.1</span> * xl**<span class="number">2</span> + X2**<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>存在的问题：grad_squared 逐渐变大，步长逐渐变短，容易卡在鞍点或者局部最优的位置。</p>
+<p>因此<strong>一般不用 Adagrad</strong>。（要用的话，学习率也需要调大）</p>
+<h3 id="RMSProp"><a href="#RMSProp" class="headerlink" title="RMSProp"></a>RMSProp</h3><p>Adagrad 的改进版本。</p>
+<p><img src="https://i.imgur.com/gESGoCu.png" alt=""></p>
+<p>Overshooting 现象明显缓解。</p>
+<h3 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h3><p>动量和 Adagrad 的结合版本。</p>
+<p><img src="https://i.imgur.com/Ow4wWIg.png" alt=""></p>
+<p>在第一轮更新的时候，步长会很大，因为 second_moment 很小很小。（尽管 fisrt_moment 也可能很小）</p>
+<p>修正版的 Adam：</p>
+<p><img src="https://i.imgur.com/9dOAvGK.png" alt=""></p>
+<p>依然存在的问题：对于旋转了的 taco shell，还是无法 unrotate。</p>
+<p><img src="https://i.imgur.com/fRGkYYU.png" alt=""></p>
+<p>对于 momentum，经常采用策略衰减学习率，而 Adam 不一定常用。最好先试试不衰减学习率，看看损失函数曲线哪里需要衰减。</p>
+<h3 id="二阶优化方法"><a href="#二阶优化方法" class="headerlink" title="二阶优化方法"></a>二阶优化方法</h3><p><img src="https://i.imgur.com/2iC3yft.png" alt=""></p>
+<p>每次直接向最低处走，原始版本中不需要学习率。</p>
+<p>然而实际在神经网络中不可行，因为 Hessian 矩阵是 $N\times N$ 的，需要太多内存，也求不了逆矩阵。</p>
+<p>解决办法：用 Hessian 矩阵的估计值。</p>
+<p>L-BFGS：</p>
+<p><img src="https://i.imgur.com/PO02RiE.png" alt=""></p>
+<p>一般来说在随机数据上（Stochastic）和非凸优化问题上效果也不好。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>首选 Adam</li>
+<li>如果能够整批更新（也就是根据整个训练数据集计算的梯度来更新，而不是随机梯度下降），那么 L-BFGS 或许不错</li>
+</ul>
+<h2 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h2><h3 id="模型集成"><a href="#模型集成" class="headerlink" title="模型集成"></a>模型集成</h3><p>例如用 10 个模型，用不同的随机数据初始化，然后独立训练每一个模型，最后合在一起平均着预测。可以防止过拟合。</p>
+<p>技巧 1：</p>
+<p><img src="https://i.imgur.com/9oy6BeO.png" alt=""></p>
+<p>技巧 2：</p>
+<p><img src="https://i.imgur.com/zK60Zjy.png" alt=""></p>
+<p>Polyak 平均化。（其实实践中不太常见）</p>
+<h3 id="正则项"><a href="#正则项" class="headerlink" title="正则项"></a>正则项</h3><p>一般来说还是希望将单个模型的效果弄好。</p>
+<p>添加 L1 和 L2 正则项，防止模型过于复杂，在前面已经介绍过。L2 一般不用于神经网络。</p>
+<p><img src="https://i.imgur.com/OXclSiZ.png" alt=""></p>
+<h3 id="Dropout-层"><a href="#Dropout-层" class="headerlink" title="Dropout 层"></a>Dropout 层</h3><p>这个比较常见，每一次前向传播，在每一层随机将一些神经元置零（只用神经元的子集，每一次迭代，这个子集都不同）。</p>
+<p>置零含义：将部分激活值设置为 0。</p>
+<p>通常用在全连接层，有时也用在卷积层（可能会把一个通道都 drop 掉）。</p>
+<p><img src="https://i.imgur.com/MBT9gbT.png" alt=""></p>
+<p>合理性解释：</p>
+<ul>
+<li>随机舍弃神经元，代表着不能仅仅根据某些神经元（某个特征）就做出决策，而需要在各个特征上都有分布，防止了过拟合。</li>
+<li>像是在一个模型上做了模型集成（子集、子网络）</li>
+</ul>
+<p>需要注意，测试的时候最好不要有随机因素。</p>
+<p><img src="https://i.imgur.com/r2ZZIV4.png" alt=""></p>
+<p>上图中的 $z$ 是 mask。</p>
+<p>测试时，为对此积分进行简单估计，直接乘 dropout 的概率。</p>
+<p><img src="https://i.imgur.com/RzY6mIV.png" alt=""></p>
+<p>技巧：在训练的时候除 p，测试的时候不乘 p。（常用手段，因为测试时间更宝贵，训练时还有 GPU）</p>
+<p><img src="https://i.imgur.com/73X2uME.png" alt=""></p>
+<p>回溯的时候也是只更新没被随机掉的神经元。</p>
+<h3 id="BN-层"><a href="#BN-层" class="headerlink" title="BN 层"></a>BN 层</h3><p>BN 层也有正则化的效果（<strong>训练时添加随机性，测试时将随机性平均化、边缘化</strong>），不过 dropout 有一个概率参数 p 可以调整正则化强度，而 BN 调不了。</p>
+<h3 id="数据增强"><a href="#数据增强" class="headerlink" title="数据增强"></a>数据增强</h3><p>例如随机旋转、翻转、缩放、裁剪、色彩抖动（数据的 PCA 方向等），丰富训练集。</p>
+<p><img src="https://i.imgur.com/4G4vFTK.png" alt=""></p>
+<h3 id="DropConnect"><a href="#DropConnect" class="headerlink" title="DropConnect"></a>DropConnect</h3><p>随机将权重置零（也就是随机删线）：</p>
+<p><img src="https://i.imgur.com/ulhVlJD.png" alt=""></p>
+<p>效果差不多。</p>
+<h3 id="分数阶最大值池化"><a href="#分数阶最大值池化" class="headerlink" title="分数阶最大值池化"></a>分数阶最大值池化</h3><p>池化区域随机化，输入层和输出层的 size 可以不是整数比例的。不怎么常用。</p>
+<p><img src="https://i.imgur.com/AKHq14F.png" alt=""></p>
+<h3 id="随机网络深度"><a href="#随机网络深度" class="headerlink" title="随机网络深度"></a>随机网络深度</h3><p>训练时把网络中某些层随机 drop 掉，测试时使用整个网络。</p>
+<p><img src="https://i.imgur.com/BbvzVQM.png" alt=""></p>
+<p>效果都差不多（不常用）。</p>
+<p>总的来说，核心思想都是<strong>训练时添加随机性，测试时将随机性平均化、边缘化</strong>，大多数情况 BN 层就够了，不够（仍然过拟合）再加 dropout。</p>
+<h2 id="迁移学习"><a href="#迁移学习" class="headerlink" title="迁移学习"></a>迁移学习</h2><p>有时数据集太小，用在大数据集上训练的模型，固定大多数 layer，只训练最后一个 layer 之类的。就是预训练模型。</p>
+<p><img src="https://i.imgur.com/H5pSuUv.png" alt=""></p>
+<p>学习率需要调小。</p>
+<p><img src="https://i.imgur.com/UwzFHW2.png" alt=""></p>
+
         
     
 
@@ -623,7 +703,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2023/09/">九月 2023<span class="sidebar_archives-count">8</span></a>
+                <a class="sidebar_archives-link" href="/archives/2023/09/">九月 2023<span class="sidebar_archives-count">9</span></a>
             </ul>
         </li>
         
