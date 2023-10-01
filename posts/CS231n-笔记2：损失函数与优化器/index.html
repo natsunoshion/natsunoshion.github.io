@@ -8,21 +8,25 @@
       
       
       
-        <link rel="canonical" href="https://natsunoshion.github.io/">
+        <link rel="canonical" href="https://natsunoshion.github.io/posts/CS231n-%E7%AC%94%E8%AE%B02%EF%BC%9A%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E4%B8%8E%E4%BC%98%E5%8C%96%E5%99%A8/">
       
       
+        <link rel="prev" href="../CS231n-%E7%AC%94%E8%AE%B01%EF%BC%9A%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+        <link rel="next" href="../CS231n-%E7%AC%94%E8%AE%B03%EF%BC%9A%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%BB%8B%E7%BB%8D/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.2">
     
     
       
-        <title>natsunoshion 的个人博客</title>
+        <title>CS231n 笔记2：损失函数与优化器 - natsunoshion 的个人博客</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.d451bc0e.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d451bc0e.min.css">
       
       
 
@@ -41,14 +45,14 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-   <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
         .gslide-title { margin-top: 0px; user-select: text; }
         .gslide-desc { color: #666; user-select: text; }
@@ -59,7 +63,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-            </style> <script src="assets/javascripts/glightbox.min.js"></script></head>
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -74,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-mkdocs" class="md-skip">
+        <a href="#_1" class="md-skip">
           跳转至
         </a>
       
@@ -90,7 +94,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="." title="natsunoshion 的个人博客" class="md-header__button md-logo" aria-label="natsunoshion 的个人博客" data-md-component="logo">
+    <a href="../.." title="natsunoshion 的个人博客" class="md-header__button md-logo" aria-label="natsunoshion 的个人博客" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -110,7 +114,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Welcome to MkDocs
+              CS231n 笔记2：损失函数与优化器
             
           </span>
         </div>
@@ -182,7 +186,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="natsunoshion 的个人博客" class="md-nav__button md-logo" aria-label="natsunoshion 的个人博客" data-md-component="logo">
+    <a href="../.." title="natsunoshion 的个人博客" class="md-nav__button md-logo" aria-label="natsunoshion 的个人博客" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -197,6 +201,8 @@
       
   
   
+    
+  
   
     
     
@@ -206,12 +212,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
         
           
           <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
@@ -225,7 +231,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_1">
             <span class="md-nav__icon md-icon"></span>
             CS231n 学习
@@ -238,7 +244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="posts/CS231n-%E7%AC%94%E8%AE%B01%EF%BC%9A%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/" class="md-nav__link">
+      <a href="../CS231n-%E7%AC%94%E8%AE%B01%EF%BC%9A%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -256,9 +262,27 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="posts/CS231n-%E7%AC%94%E8%AE%B02%EF%BC%9A%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E4%B8%8E%E4%BC%98%E5%8C%96%E5%99%A8/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    笔记2：损失函数与优化器
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -267,6 +291,91 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    损失函数
+  </a>
+  
+    <nav class="md-nav" aria-label="损失函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    基本公式
+  </a>
+  
+    <nav class="md-nav" aria-label="基本公式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#svm-multi-class-svm-loss-hinge-loss" class="md-nav__link">
+    多分类 SVM 损失函数（Multi-class SVM loss / Hinge loss）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#softmax" class="md-nav__link">
+    Softmax 损失函数（交叉熵损失函数）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    优化器
+  </a>
+  
+    <nav class="md-nav" aria-label="优化器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    随机法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    梯度下降
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -278,7 +387,7 @@
   
   
     <li class="md-nav__item">
-      <a href="posts/CS231n-%E7%AC%94%E8%AE%B03%EF%BC%9A%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+      <a href="../CS231n-%E7%AC%94%E8%AE%B03%EF%BC%9A%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -298,7 +407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="posts/CS231n-%E7%AC%94%E8%AE%B04%EF%BC%9A%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="md-nav__link">
+      <a href="../CS231n-%E7%AC%94%E8%AE%B04%EF%BC%9A%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -318,7 +427,7 @@
   
   
     <li class="md-nav__item">
-      <a href="posts/CS231n-%E7%AC%94%E8%AE%B05%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CI/" class="md-nav__link">
+      <a href="../CS231n-%E7%AC%94%E8%AE%B05%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CI/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -338,7 +447,7 @@
   
   
     <li class="md-nav__item">
-      <a href="posts/CS231n-%E7%AC%94%E8%AE%B06%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CII/" class="md-nav__link">
+      <a href="../CS231n-%E7%AC%94%E8%AE%B06%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CII/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -404,7 +513,7 @@
   
   
     <li class="md-nav__item">
-      <a href="posts/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ALighting-Every-Darkness-in-Two-Pairs-A-Calibration-Free-Pipeline-for-RAW-Denoising/" class="md-nav__link">
+      <a href="../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ALighting-Every-Darkness-in-Two-Pairs-A-Calibration-Free-Pipeline-for-RAW-Denoising/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -424,7 +533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="posts/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ANuI-Go-Recursive-Non-Local-Encoder-Decoder-Network-for-Retinal-Image-Non-Uniform-Illumination-Removal/" class="md-nav__link">
+      <a href="../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ANuI-Go-Recursive-Non-Local-Encoder-Decoder-Network-for-Retinal-Image-Non-Uniform-Illumination-Removal/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -462,8 +571,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -472,16 +579,69 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commands" class="md-nav__link">
-    Commands
+  <a href="#_1" class="md-nav__link">
+    损失函数
   </a>
+  
+    <nav class="md-nav" aria-label="损失函数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    基本公式
+  </a>
+  
+    <nav class="md-nav" aria-label="基本公式">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#svm-multi-class-svm-loss-hinge-loss" class="md-nav__link">
+    多分类 SVM 损失函数（Multi-class SVM loss / Hinge loss）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#softmax" class="md-nav__link">
+    Softmax 损失函数（交叉熵损失函数）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#project-layout" class="md-nav__link">
-    Project layout
+  <a href="#_3" class="md-nav__link">
+    优化器
   </a>
+  
+    <nav class="md-nav" aria-label="优化器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    随机法
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    梯度下降
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -500,21 +660,39 @@
                   
 
 
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs<a class="headerlink" href="#welcome-to-mkdocs" title="Permanent link">&para;</a></h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
-</ul>
-<h2 id="project-layout">Project layout<a class="headerlink" href="#project-layout" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre></div>
+  <h1>笔记2：损失函数与优化器</h1>
+
+<h2 id="_1">损失函数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="_2">基本公式<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<div class="arithmatex">\[
+L(W)=\frac{1}{N}\sum_{i=1}^N L_i(f(x_i, W), y_i) + \lambda R(W)
+\]</div>
+<p>补充：（正则项）</p>
+<p><a class="glightbox" href="https://i.imgur.com/WdZaB4n.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/WdZaB4n.png" /></a></p>
+<p>L1 倾向于稀疏，L2 倾向于散布：如 [1, 0, 0, 0] 和 [0.25, 0.25, 0.25, 0.25]。</p>
+<h4 id="svm-multi-class-svm-loss-hinge-loss">多分类 SVM 损失函数（Multi-class SVM loss / Hinge loss）<a class="headerlink" href="#svm-multi-class-svm-loss-hinge-loss" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[
+L_i=\sum_{j\neq y_i} max(0, s_j - s_{y_i} + 1)
+\]</div>
+<p>其中 1 为安全距离，<span class="arithmatex">\(s_j\)</span> 为第 <span class="arithmatex">\(j\)</span> 个类别的得分。</p>
+<h4 id="softmax">Softmax 损失函数（交叉熵损失函数）<a class="headerlink" href="#softmax" title="Permanent link">&para;</a></h4>
+<div class="arithmatex">\[
+\begin{aligned}
+L_i &amp;= -\log P(Y=y_i|X=x_i)\\
+&amp;=-\log (\frac{e^{s_{y_i}}}{\sum_j e^{s_j}})
+\end{aligned}
+\]</div>
+<p>与 Hinge 损失函数不同，交叉熵损失函数会始终倾向于提升正确标签的得分（以至于正无穷），减少错误标签的得分（以至于负无穷）。</p>
+<h2 id="_3">优化器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">随机法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<p>纯随机找 <span class="arithmatex">\(W\)</span>，很差！</p>
+<h3 id="_5">梯度下降<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<p>由于在所有样本上进行梯度下降训练效率较低，采用 Stochastic Gradient Descent（随机梯度下降）：</p>
+<div class="arithmatex">\[
+\triangledown_W L(W)=\frac{1}{N}\sum_{i=1}^N \triangledown_W L_i(x_i, y_i, W) + \lambda \triangledown_W R(W)
+\]</div>
+<p>也就是选取一定数量（batch size）的样本进行梯度计算。</p>
+<p>特征提取——卷积神经网络的引入。</p>
 
 
 
@@ -552,12 +730,12 @@ docs/
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.sections"], "search": "assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.sections"], "search": "../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
-      <script src="assets/javascripts/bundle.726fbb30.min.js"></script>
+      <script src="../../assets/javascripts/bundle.726fbb30.min.js"></script>
       
-        <script src="javascripts/config.js"></script>
+        <script src="../../javascripts/config.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
