@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://natsunoshion.github.io/posts/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ALighting-Every-Darkness-in-Two-Pairs-A-Calibration-Free-Pipeline-for-RAW-Denoising/">
+        <link rel="canonical" href="https://natsunoshion.github.io/posts/CNN%E6%9E%B6%E6%9E%84/">
       
       
-        <link rel="prev" href="../%EF%BC%88%E8%BF%99%E4%B8%80%E8%AF%BE%E8%A2%AB%E5%88%A0%E6%8E%89%E4%BA%86%EF%BC%89%E7%AC%AC8%E8%AF%BE%EF%BC%9A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%BD%AF%E4%BB%B6/">
+        <link rel="prev" href="../%E7%AC%AC11%E8%AF%BE%EF%BC%9A%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%8E%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2/">
       
       
-        <link rel="next" href="../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ANuI-Go-Recursive-Non-Local-Encoder-Decoder-Network-for-Retinal-Image-Non-Uniform-Illumination-Removal/">
+        <link rel="next" href="../%EF%BC%88%E8%BF%99%E4%B8%80%E8%AF%BE%E8%A2%AB%E5%88%A0%E6%8E%89%E4%BA%86%EF%BC%89%E7%AC%AC8%E8%AF%BE%EF%BC%9A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%BD%AF%E4%BB%B6/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>论文阅读：Lighting Every Darkness in Two Pairs: A Calibration-Free Pipeline for RAW Denoising - natsunoshion 的个人博客</title>
+        <title>CNN架构 - natsunoshion 的个人博客</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#31" class="md-skip">
+        <a href="#alex" class="md-skip">
           跳转至
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              论文阅读：Lighting Every Darkness in Two Pairs: A Calibration-Free Pipeline for RAW Denoising
+              CNN架构
             
           </span>
         </div>
@@ -222,6 +222,8 @@
       
   
   
+    
+  
   
     
     
@@ -231,12 +233,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -250,7 +252,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             CS231n 学习
@@ -461,9 +463,27 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../CNN%E6%9E%B6%E6%9E%84/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    CNN架构
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -472,6 +492,73 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#alex" class="md-nav__link">
+    Alex
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zfnet" class="md-nav__link">
+    ZFNet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vgg" class="md-nav__link">
+    VGG
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#googlenet" class="md-nav__link">
+    GoogLeNet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resnet" class="md-nav__link">
+    ResNet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#senet" class="md-nav__link">
+    SENet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    其他发展
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -508,8 +595,6 @@
       
   
   
-    
-  
   
     
     
@@ -519,12 +604,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -538,7 +623,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             论文阅读
@@ -549,27 +634,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Lighting-Every-Darkness-in-Two-Pairs-A-Calibration-Free-Pipeline-for-RAW-Denoising
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ALighting-Every-Darkness-in-Two-Pairs-A-Calibration-Free-Pipeline-for-RAW-Denoising/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -578,52 +645,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#31" class="md-nav__link">
-    3.1 先前的不足和动机
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#32" class="md-nav__link">
-    3.2 预训练
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    微调
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    部署
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -681,29 +702,50 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#31" class="md-nav__link">
-    3.1 先前的不足和动机
+  <a href="#alex" class="md-nav__link">
+    Alex
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#32" class="md-nav__link">
-    3.2 预训练
+  <a href="#zfnet" class="md-nav__link">
+    ZFNet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vgg" class="md-nav__link">
+    VGG
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#googlenet" class="md-nav__link">
+    GoogLeNet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resnet" class="md-nav__link">
+    ResNet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#senet" class="md-nav__link">
+    SENet
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    微调
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    部署
+    其他发展
   </a>
   
 </li>
@@ -723,43 +765,87 @@
                   
 
 
-  <h1>Lighting-Every-Darkness-in-Two-Pairs-A-Calibration-Free-Pipeline-for-RAW-Denoising</h1>
+  <h1>CNN架构</h1>
 
-<p>论文 PDF：<a href="https://arxiv.org/pdf/2308.03448.pdf">Lighting Every Darkness in Two Pairs: A Calibration-Free Pipeline for RAW Denoising</a></p>
-<p>以往的模型：</p>
-<p>问题：</p>
-<ol>
-<li>数据采集需要稳定光照，耗时耗劳动力</li>
-<li>某个特定相机的去噪网络很难适用于其他相机</li>
-<li>可能不包括特定的噪声分布，合成噪声和真实噪声有区别</li>
-</ol>
-<p>提出的模型：</p>
-<ol>
-<li>不需要校准数据（解决问题 1）</li>
-<li>预训练+微调框架（解决问题 2）</li>
-<li>提出 Reparameterized Noise Removal (RepNR) block 和 camera-specific alignments (CSA)（解决问题 3）</li>
-</ol>
-<p><a class="glightbox" href="https://i.imgur.com/9LcZ3LB.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/9LcZ3LB.png" /></a></p>
-<h3 id="31">3.1 先前的不足和动机<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
-<p>基本重讲了一遍，附带有公式。</p>
-<h3 id="32">3.2 预训练<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
-<p>使用虚拟相机预训练，更快适应不同相机。</p>
-<p>有 m 个虚拟相机，k-path。</p>
-<p><a class="glightbox" href="https://i.imgur.com/fBSv5Dx.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/fBSv5Dx.png" /></a></p>
-<p>第 k 通道。</p>
-<h3 id="_1">微调<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>微调以适应<strong>实际噪声</strong>。</p>
+<p>不同年份的授课内容太混乱了，我尽量把认为重要的都记录一下。</p>
+<h2 id="alex">Alex<a class="headerlink" href="#alex" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="https://i.imgur.com/n0m4NTg.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/n0m4NTg.png" /></a></p>
+<p>拆成了两部分，因为 GPU 内存不够。</p>
+<h2 id="zfnet">ZFNet<a class="headerlink" href="#zfnet" title="Permanent link">&para;</a></h2>
+<p>ZFNet 在 Alex 上（改参数）稍微改进了一下：</p>
+<p><a class="glightbox" href="https://i.imgur.com/dbNTuKo.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/dbNTuKo.png" /></a></p>
+<h2 id="vgg">VGG<a class="headerlink" href="#vgg" title="Permanent link">&para;</a></h2>
+<p>网络深度更大了。</p>
+<p>也是非常大的提升：</p>
+<p><a class="glightbox" href="https://i.imgur.com/WVsKEsM.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/WVsKEsM.png" /></a></p>
+<p>由于层数增大了，所以卷积核大小需要减小。（从感受野上理解）</p>
+<p>同时参数也更少了：</p>
+<p><a class="glightbox" href="https://i.imgur.com/i1aED4S.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/i1aED4S.png" /></a></p>
+<p><a class="glightbox" href="https://i.imgur.com/EG9WPQ3.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/EG9WPQ3.png" /></a></p>
+<p>前面占内存多，后面参数多。</p>
+<h2 id="googlenet">GoogLeNet<a class="headerlink" href="#googlenet" title="Permanent link">&para;</a></h2>
+<p>注意名字：Google+LeNet。</p>
+<p><a class="glightbox" href="https://i.imgur.com/hdSl23u.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/hdSl23u.png" /></a></p>
+<p>可并行（线性和非线性并行）：</p>
+<p><a class="glightbox" href="https://i.imgur.com/mx5T6lV.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/mx5T6lV.png" /></a></p>
+<p>计算量还是非常大的：（由于有拼接，所以都有 padding）</p>
+<p><a class="glightbox" href="https://i.imgur.com/floQ2de.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/floQ2de.png" /></a></p>
+<p>解决方法是 Bottleneck：</p>
+<p><a class="glightbox" href="https://i.imgur.com/aJI7IcO.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/aJI7IcO.png" /></a></p>
+<h2 id="resnet">ResNet<a class="headerlink" href="#resnet" title="Permanent link">&para;</a></h2>
+<p>加入了一个恒等映射：（Skip Connection）</p>
+<p><a class="glightbox" href="https://i.imgur.com/yUer5QS.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/yUer5QS.png" /></a></p>
+<p>思想：</p>
+<p><a class="glightbox" href="https://i.imgur.com/iKhKQ6q.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/iKhKQ6q.png" /></a></p>
+<p>深的网络没有优化好，导致欠拟合。</p>
+<p>因此添加一个恒等映射：</p>
+<p><a class="glightbox" href="https://i.imgur.com/JktFBUZ.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/JktFBUZ.png" /></a></p>
+<p>这里的 $F(x)$ 也就是说的残差，$x$ 是恒等映射，而这个残差就可以理解为一个可变的 $\Delta x$，用于调整，极端情况下可以调整为 $\Delta x=0$ 也就是恒等映射。</p>
+<p>一般只是直接求和，而不需要 $F(x)$ 和 $x$ 之间的权重。</p>
+<p>没有过多的 FC 层，这样参数就会少一些，同时效果也比 VGG 好。</p>
+<p><a class="glightbox" href="https://i.imgur.com/MYcJMcu.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/MYcJMcu.png" /></a></p>
+<p>ResNet-50+还会有 Bottleneck，提高效率。</p>
+<p><a class="glightbox" href="https://i.imgur.com/Vghwize.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/Vghwize.png" /></a></p>
+<p>在 ImageNet 上 ResNet 比人类还强了。</p>
+<p><a class="glightbox" href="https://i.imgur.com/zERdWrm.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/zERdWrm.png" /></a></p>
+<p>GoogLeNet 可以和 ResNet 结合在一起。</p>
+<p>VGG 一般就不用了。（不过预训练模型“提特征”比 ResNet 还好）</p>
+<h2 id="senet">SENet<a class="headerlink" href="#senet" title="Permanent link">&para;</a></h2>
+<p>对 ResNe 进行改进：</p>
+<p><a class="glightbox" href="https://i.imgur.com/hTHLPhw.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/hTHLPhw.png" /></a></p>
+<p>PCA 那里，信息有压缩。</p>
+<p>Sigmoid 换为 Softmax 就不一样了。</p>
+<p>$F_{ex}(·,W)$ 就是降维去噪。</p>
+<h2 id="_1">其他发展<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>17 年之后，那个比赛停了。</p>
+<p><a class="glightbox" href="https://i.imgur.com/1UtSSLz.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/1UtSSLz.png" /></a></p>
+<p>经过消融实验，上图的效果最好，还提出了 1000 层的结构。</p>
+<p>宽度：</p>
+<p><a class="glightbox" href="https://i.imgur.com/78NyS2J.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/78NyS2J.png" /></a></p>
+<p>分组：（编程 conv 都有一个 group 参数）</p>
+<p><a class="glightbox" href="https://i.imgur.com/7MDbSvW.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/7MDbSvW.png" /></a></p>
+<p>DenseNet：（训练起来非常慢，concat 和汇聚非常多，梯度计算非常复杂）</p>
+<p><a class="glightbox" href="https://i.imgur.com/8uCEm5U.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/8uCEm5U.png" /></a></p>
+<p>MobileNet：（降低计算量）</p>
+<p><a class="glightbox" href="https://i.imgur.com/eUflkeo.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/eUflkeo.png" /></a></p>
+<p>也类似于分组（例如 256 个 Channel，那就分 256 个组），还有 1*1 的逐点作卷积。</p>
+<p>整个计算效率很高，同时精度损失小。</p>
+<p>也有其他的改进，来降低复杂度。</p>
+<p>更复杂的：（NASNet 不怎么被使用）</p>
+<p><a class="glightbox" href="https://i.imgur.com/fcCkIwK.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/fcCkIwK.png" /></a></p>
+<p><a class="glightbox" href="https://i.imgur.com/3X45ky2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/3X45ky2.png" /></a></p>
+<p>启发式搜索：</p>
+<p><a class="glightbox" href="https://i.imgur.com/3GGhpCZ.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/3GGhpCZ.png" /></a></p>
 <ul>
-<li>只用 6 对原始数据</li>
-<li>$3\times 3$ 卷积不再改动</li>
-<li>CSA 的初始化：（IMNR）$$CSA^T = \frac{1}{m}\sum_{i=1}<sup>{m}{CSA</sup>i}$$</li>
-<li>In-model 噪声和 out-of-model 噪声，如前图所示，上面的 $3\times 3$ 卷积是 in-model 噪声处理方法，也就是 OMNR</li>
-<li>先训练 IMNR 再训练 OMNR</li>
+<li>$d$ 是网络深度。</li>
+<li>$w$ 是 channel 数。</li>
+<li>$r$ 是输入图像大小。</li>
 </ul>
-<h3 id="_2">部署<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>使用结构重参数化技术，能够在部署时转为 $3\times 3$ 卷积部署。</p>
-<p><a class="glightbox" href="https://i.imgur.com/hQ5O2I7.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/hQ5O2I7.png" /></a></p>
-<p>因此部署代价不会增大。</p>
+<p>调节参数，通过搜索得到一个比较好的效果。</p>
+<p>总结：</p>
+<p><a class="glightbox" href="https://i.imgur.com/Bseu1sw.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/Bseu1sw.png" /></a></p>
+<p><a class="glightbox" href="https://i.imgur.com/sJL3bPb.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/sJL3bPb.png" /></a></p>
+<p>默认用 ResNet 和 <strong>SENet</strong> 比较好。</p>
 
 
 

@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://natsunoshion.github.io/posts/CS231n-%E7%AC%94%E8%AE%B06%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CII/">
+        <link rel="canonical" href="https://natsunoshion.github.io/posts/%E7%AC%AC7%E8%AF%BE%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%882%EF%BC%89/">
       
       
-        <link rel="prev" href="../CS231n-%E7%AC%94%E8%AE%B05%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CI/">
+        <link rel="prev" href="../%E7%AC%AC6%E8%AF%BE%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%881%EF%BC%89/">
       
       
-        <link rel="next" href="../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ALighting-Every-Darkness-in-Two-Pairs-A-Calibration-Free-Pipeline-for-RAW-Denoising/">
+        <link rel="next" href="../%E7%AC%AC8%E8%AF%BE%EF%BC%9ARNN/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>CS231n-笔记6：训练神经网络II - natsunoshion 的个人博客</title>
+        <title>第7课：训练神经网络（2） - natsunoshion 的个人博客</title>
       
     
     
@@ -44,6 +44,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -114,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CS231n-笔记6：训练神经网络II
+              第7课：训练神经网络（2）
             
           </span>
         </div>
@@ -201,6 +203,25 @@
       
   
   
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    主页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -217,10 +238,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -231,8 +252,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_1">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             CS231n 学习
           </label>
@@ -244,11 +265,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../CS231n-%E7%AC%94%E8%AE%B01%EF%BC%9A%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/" class="md-nav__link">
+      <a href="../%E7%AC%AC2%E8%AF%BE%EF%BC%9AKNN%20%E4%B8%8E%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    笔记1：图像分类
+    第2课：KNN 与线性分类
   </span>
   
 
@@ -264,11 +285,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../CS231n-%E7%AC%94%E8%AE%B02%EF%BC%9A%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E4%B8%8E%E4%BC%98%E5%8C%96%E5%99%A8/" class="md-nav__link">
+      <a href="../%E7%AC%AC3%E8%AF%BE%EF%BC%9A%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E4%B8%8E%E4%BC%98%E5%8C%96%E5%99%A8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    笔记2：损失函数与优化器
+    第3课：损失函数与优化器
   </span>
   
 
@@ -284,11 +305,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../CS231n-%E7%AC%94%E8%AE%B03%EF%BC%9A%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+      <a href="../%E7%AC%AC4%E8%AF%BE%EF%BC%9A%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    笔记3：神经网络介绍
+    第4课：神经网络介绍
   </span>
   
 
@@ -304,11 +325,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../CS231n-%E7%AC%94%E8%AE%B04%EF%BC%9A%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="md-nav__link">
+      <a href="../%E7%AC%AC5%E8%AF%BE%EF%BC%9A%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    笔记4：卷积神经网络
+    第5课：卷积神经网络
   </span>
   
 
@@ -324,11 +345,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../CS231n-%E7%AC%94%E8%AE%B05%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CI/" class="md-nav__link">
+      <a href="../%E7%AC%AC6%E8%AF%BE%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%881%EF%BC%89/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    笔记5：训练神经网络I
+    第6课：训练神经网络（1）
   </span>
   
 
@@ -355,7 +376,7 @@
           
   
   <span class="md-ellipsis">
-    笔记6：训练神经网络II
+    第7课：训练神经网络（2）
   </span>
   
 
@@ -366,7 +387,7 @@
         
   
   <span class="md-ellipsis">
-    笔记6：训练神经网络II
+    第7课：训练神经网络（2）
   </span>
   
 
@@ -539,6 +560,126 @@
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC8%E8%AF%BE%EF%BC%9ARNN/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第8课：RNN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC9%E8%AF%BE%EF%BC%9AAttention%E5%92%8CTransformer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第9课：Attention和Transformer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC10%E8%AF%BE%EF%BC%9A%E8%A7%86%E9%A2%91%E7%90%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第10课：视频理解
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC11%E8%AF%BE%EF%BC%9A%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%8E%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第11课：目标检测与图像分割
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CNN%E6%9E%B6%E6%9E%84/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CNN架构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EF%BC%88%E8%BF%99%E4%B8%80%E8%AF%BE%E8%A2%AB%E5%88%A0%E6%8E%89%E4%BA%86%EF%BC%89%E7%AC%AC8%E8%AF%BE%EF%BC%9A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%BD%AF%E4%BB%B6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （这一课被删掉了）第8课：深度学习软件
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -564,10 +705,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -578,8 +719,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             论文阅读
           </label>
@@ -816,7 +957,7 @@
                   
 
 
-  <h1>笔记6：训练神经网络II</h1>
+  <h1>第7课：训练神经网络（2）</h1>
 
 <h2 id="_1">前情提要<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
 <p>数据中心化的原因：</p>
@@ -827,7 +968,7 @@
 <h3 id="sgd">SGD 存在的问题<a class="headerlink" href="#sgd" title="Permanent link">&para;</a></h3>
 <ul>
 <li>某两个方向的梯度差距大：<a class="glightbox" href="https://i.imgur.com/qTfciz0.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/qTfciz0.png" /></a></li>
-<li>局部最优（在高维空间少见）、<strong>鞍点</strong>（如 <span class="arithmatex">\(x^3\)</span> 的 <span class="arithmatex">\(x=0\)</span> 处梯度为 0，在高维空间常见）</li>
+<li>局部最优（在高维空间少见）、<strong>鞍点</strong>（如 $x^3$ 的 $x=0$ 处梯度为 0，在高维空间常见）</li>
 <li>随机采样等会带来噪声，收敛慢</li>
 </ul>
 <h3 id="_3">动量<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
@@ -836,7 +977,7 @@
 <p>可以理解为模拟了一个物理引擎。</p>
 <p><a class="glightbox" href="https://i.imgur.com/ZMgFfEH.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/ZMgFfEH.png" /></a></p>
 <p>速度一般初始化为 0。</p>
-<p><strong>Nesterov Momentum</strong>：改进的动量，可以看见 <span class="arithmatex">\(\alpha\)</span> 的位置变了。</p>
+<p><strong>Nesterov Momentum</strong>：改进的动量，可以看见 $\alpha$ 的位置变了。</p>
 <p><a class="glightbox" href="https://i.imgur.com/pD4I4Ho.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/pD4I4Ho.png" /></a></p>
 <p><a class="glightbox" href="https://i.imgur.com/xbLsJIz.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/xbLsJIz.png" /></a></p>
 <blockquote>
@@ -876,11 +1017,11 @@
 <p><a class="glightbox" href="https://i.imgur.com/9dOAvGK.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/9dOAvGK.png" /></a></p>
 <p>依然存在的问题：对于旋转了的 taco shell，还是无法 unrotate。</p>
 <p><a class="glightbox" href="https://i.imgur.com/fRGkYYU.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/fRGkYYU.png" /></a></p>
-<p>对于 momentum，经常采用策略衰减学习率，而 Adam 不一定常用。最好先试试不衰减学习率，看看损失函数曲线哪里需要衰减。</p>
+<p>对于 momentum，经常采用策略衰减学习率，而 Adam 不一定需要衰减。最好先试试不衰减学习率，看看损失函数曲线哪里需要衰减。</p>
 <h3 id="_4">二阶优化方法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
 <p><a class="glightbox" href="https://i.imgur.com/2iC3yft.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/2iC3yft.png" /></a></p>
 <p>每次直接向最低处走，原始版本中不需要学习率。</p>
-<p>然而实际在神经网络中不可行，因为 Hessian 矩阵是 <span class="arithmatex">\(N\times N\)</span> 的，需要太多内存，也求不了逆矩阵。</p>
+<p>然而实际在神经网络中不可行，因为 Hessian 矩阵是 $N\times N$ 的，需要太多内存，也求不了逆矩阵。</p>
 <p>解决办法：用 Hessian 矩阵的估计值。</p>
 <p>L-BFGS：</p>
 <p><a class="glightbox" href="https://i.imgur.com/PO02RiE.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/PO02RiE.png" /></a></p>
@@ -900,7 +1041,7 @@
 <p>Polyak 平均化。（其实实践中不太常见）</p>
 <h3 id="_8">正则项<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h3>
 <p>一般来说还是希望将单个模型的效果弄好。</p>
-<p>添加 L1 和 L2 正则项，防止模型过于复杂，在前面已经介绍过。L2 一般不用于神经网络。</p>
+<p>添加 L1 和 L2 正则项，防止模型过于复杂，在前面已经介绍过。L2 一般不用于神经网络，因为会带来权重衰减。</p>
 <p><a class="glightbox" href="https://i.imgur.com/OXclSiZ.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/OXclSiZ.png" /></a></p>
 <h3 id="dropout">Dropout 层<a class="headerlink" href="#dropout" title="Permanent link">&para;</a></h3>
 <p>这个比较常见，每一次前向传播，在每一层随机将一些神经元置零（只用神经元的子集，每一次迭代，这个子集都不同）。</p>
@@ -914,7 +1055,7 @@
 </ul>
 <p>需要注意，测试的时候最好不要有随机因素。</p>
 <p><a class="glightbox" href="https://i.imgur.com/r2ZZIV4.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/r2ZZIV4.png" /></a></p>
-<p>上图中的 <span class="arithmatex">\(z\)</span> 是 mask。</p>
+<p>上图中的 $z$ 是 mask。</p>
 <p>测试时，为对此积分进行简单估计，直接乘 dropout 的概率。</p>
 <p><a class="glightbox" href="https://i.imgur.com/RzY6mIV.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/RzY6mIV.png" /></a></p>
 <p>技巧：在训练的时候除 p，测试的时候不乘 p。（常用手段，因为测试时间更宝贵，训练时还有 GPU）</p>
@@ -941,7 +1082,7 @@
 <p>有时数据集太小，用在大数据集上训练的模型，固定大多数 layer，只训练最后一个 layer 之类的。就是预训练模型。</p>
 <p><a class="glightbox" href="https://i.imgur.com/H5pSuUv.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/H5pSuUv.png" /></a></p>
 <p>学习率需要调小。</p>
-<p><a class="glightbox" href="https://i.imgur.com/UwzFHW2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/UwzFHW2.png" /></a></p>
+<p><a class="glightbox" href="https://i.imgur.com/UwzFHW2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="|550" src="https://i.imgur.com/UwzFHW2.png" /></a></p>
 
 
 
@@ -984,11 +1125,11 @@
     
       <script src="../../assets/javascripts/bundle.726fbb30.min.js"></script>
       
-        <script src="../../javascripts/config.js"></script>
+        <script src="../../javascripts/katex.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
       
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>

@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://natsunoshion.github.io/posts/%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ALighting-Every-Darkness-in-Two-Pairs-A-Calibration-Free-Pipeline-for-RAW-Denoising/">
+        <link rel="canonical" href="https://natsunoshion.github.io/posts/%E7%AC%AC9%E8%AF%BE%EF%BC%9AAttention%E5%92%8CTransformer/">
       
       
-        <link rel="prev" href="../%EF%BC%88%E8%BF%99%E4%B8%80%E8%AF%BE%E8%A2%AB%E5%88%A0%E6%8E%89%E4%BA%86%EF%BC%89%E7%AC%AC8%E8%AF%BE%EF%BC%9A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%BD%AF%E4%BB%B6/">
+        <link rel="prev" href="../%E7%AC%AC8%E8%AF%BE%EF%BC%9ARNN/">
       
       
-        <link rel="next" href="../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ANuI-Go-Recursive-Non-Local-Encoder-Decoder-Network-for-Retinal-Image-Non-Uniform-Illumination-Removal/">
+        <link rel="next" href="../%E7%AC%AC10%E8%AF%BE%EF%BC%9A%E8%A7%86%E9%A2%91%E7%90%86%E8%A7%A3/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>论文阅读：Lighting Every Darkness in Two Pairs: A Calibration-Free Pipeline for RAW Denoising - natsunoshion 的个人博客</title>
+        <title>第9课：Attention和Transformer - natsunoshion 的个人博客</title>
       
     
     
@@ -80,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#31" class="md-skip">
+        <a href="#rnn" class="md-skip">
           跳转至
         </a>
       
@@ -116,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              论文阅读：Lighting Every Darkness in Two Pairs: A Calibration-Free Pipeline for RAW Denoising
+              第9课：Attention和Transformer
             
           </span>
         </div>
@@ -222,6 +222,8 @@
       
   
   
+    
+  
   
     
     
@@ -231,12 +233,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
@@ -250,7 +252,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             CS231n 学习
@@ -401,9 +403,27 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../%E7%AC%AC9%E8%AF%BE%EF%BC%9AAttention%E5%92%8CTransformer/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    第9课：Attention和Transformer
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -412,6 +432,45 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rnn" class="md-nav__link">
+    基于 RNN 的注意力机制
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    普遍注意力层
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transformer" class="md-nav__link">
+    Transformer
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -508,8 +567,6 @@
       
   
   
-    
-  
   
     
     
@@ -519,12 +576,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
@@ -538,7 +595,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             论文阅读
@@ -549,27 +606,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Lighting-Every-Darkness-in-Two-Pairs-A-Calibration-Free-Pipeline-for-RAW-Denoising
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB%EF%BC%9ALighting-Every-Darkness-in-Two-Pairs-A-Calibration-Free-Pipeline-for-RAW-Denoising/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -578,52 +617,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#31" class="md-nav__link">
-    3.1 先前的不足和动机
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#32" class="md-nav__link">
-    3.2 预训练
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    微调
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    部署
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -681,29 +674,22 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#31" class="md-nav__link">
-    3.1 先前的不足和动机
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#32" class="md-nav__link">
-    3.2 预训练
+  <a href="#rnn" class="md-nav__link">
+    基于 RNN 的注意力机制
   </a>
   
 </li>
       
         <li class="md-nav__item">
   <a href="#_1" class="md-nav__link">
-    微调
+    普遍注意力层
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    部署
+  <a href="#transformer" class="md-nav__link">
+    Transformer
   </a>
   
 </li>
@@ -723,43 +709,111 @@
                   
 
 
-  <h1>Lighting-Every-Darkness-in-Two-Pairs-A-Calibration-Free-Pipeline-for-RAW-Denoising</h1>
+  <h1>第9课：Attention和Transformer</h1>
 
-<p>论文 PDF：<a href="https://arxiv.org/pdf/2308.03448.pdf">Lighting Every Darkness in Two Pairs: A Calibration-Free Pipeline for RAW Denoising</a></p>
-<p>以往的模型：</p>
-<p>问题：</p>
+<blockquote>
+<p><a class="glightbox" href="https://i.imgur.com/qUIUOWD.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/qUIUOWD.png" /></a></p>
+<p>可以看出，RNN 有很多问题，而 Transformer 没有那么多层。</p>
+</blockquote>
+<h2 id="rnn">基于 RNN 的注意力机制<a class="headerlink" href="#rnn" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="https://i.imgur.com/ISp6JRG.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/ISp6JRG.png" /></a></p>
+<p>除了 $h_0$ 以外还需要原图像：<strong>增加信息量</strong>。（图像的特征）</p>
+<p><a class="glightbox" href="https://i.imgur.com/HZajgfp.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/HZajgfp.png" /></a></p>
+<p>在 Attention 中还可以进行特定的调整，例如强调图片中心的话, 那可以限定 $a_{1,1,1}$ 较大。</p>
+<p>注意力机制的可视化：</p>
+<p><a class="glightbox" href="https://i.imgur.com/g2P73oR.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/g2P73oR.png" /></a></p>
+<p>可视化涉及到上采样，所以图片会变得模糊。（上采样是因为前面的橙色矩阵经过了下采样，较小）</p>
+<p><a class="glightbox" href="https://i.imgur.com/SB3IHtW.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/SB3IHtW.png" /></a></p>
+<p>数据集中上下文可能带来偏差，有论文引入性别 Loss：（这个在 2023 的 PPT 里被删掉了，同时因为我看的网课是 21 版的，所以又换成 21 年的 PPT 了）</p>
+<p><a class="glightbox" href="https://i.imgur.com/zfWbST0.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/zfWbST0.png" /></a></p>
+<p>下面是原始版本的机翻和 Attention 版本的机翻：</p>
+<p><a class="glightbox" href="https://i.imgur.com/5EOVW4o.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/5EOVW4o.png" /></a></p>
+<p><a class="glightbox" href="https://i.imgur.com/dHAPFXA.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/dHAPFXA.png" /></a></p>
+<p>以下结果：</p>
+<p><a class="glightbox" href="https://i.imgur.com/W1suRX7.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/W1suRX7.png" /></a></p>
+<p>说明了有了注意力机制，识别不是顺序的。</p>
+<h2 id="_1">普遍注意力层<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="https://i.imgur.com/odAVlpU.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/odAVlpU.png" /></a></p>
+<p>Alignment 的含义可以说是计算相似度。</p>
+<p>更加通用的形式：（变为输入向量和查询向量）</p>
+<p><a class="glightbox" href="https://i.imgur.com/vKE0Pzu.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/vKE0Pzu.png" /></a></p>
+<p>这里点积后要除一个 $\sqrt D$，是为了防止值过大，在 Softmax 归一化后有一个 a 的值几乎为 1（维度大了之后，点积结果很大很大，方差很大，最后 Softmax 的熵很低）。这里的 $\sqrt D$  和方差有关。</p>
+<p>更多的查询向量：</p>
+<p><a class="glightbox" href="https://i.imgur.com/rBVeNyd.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/rBVeNyd.png" /></a></p>
+<p>注意到，输入向量（左边紫色）被用了两次，表达能力可能受限。我们希望用线性变换让它变成不同的值，增加模型的能力：（两个方向有不同的适配性，Identity Mapping）</p>
+<p><a class="glightbox" href="https://i.imgur.com/sRV9oL6.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/sRV9oL6.png" /></a></p>
+<p>需要注意，q 的个数和 x 的个数可以不一样。（Sequence to Sequence）</p>
+<p><strong>自注意力机制</strong>：</p>
+<p><a class="glightbox" href="https://i.imgur.com/W5mTWJS.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/W5mTWJS.png" /></a></p>
+<p>上图中的 q 是从输入向量得到的，这就是自注意力机制。</p>
+<p>可以看出，与排序是无关的：</p>
+<p><a class="glightbox" href="https://i.imgur.com/RYIsK0h.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/RYIsK0h.png" /></a></p>
+<p>也就是说现在无论输入是什么顺序，最终得到的顺序都是一样的（即将该序列打乱后并不影响输出结果）。</p>
+<p><em>pos</em>(.) 的需求：</p>
 <ol>
-<li>数据采集需要稳定光照，耗时耗劳动力</li>
-<li>某个特定相机的去噪网络很难适用于其他相机</li>
-<li>可能不包括特定的噪声分布，合成噪声和真实噪声有区别</li>
+<li>它应该为每个时间步长（单词在句子中的位置）输出唯一的编码</li>
+<li>任意两个时间步长之间的距离在不同长度的句子中应该一致。</li>
+<li>我们的模型应该无需任何努力就能推广到更长的句子。它的值应该是有界的。
+4.它必须是确定性的。</li>
 </ol>
-<p>提出的模型：</p>
-<ol>
-<li>不需要校准数据（解决问题 1）</li>
-<li>预训练+微调框架（解决问题 2）</li>
-<li>提出 Reparameterized Noise Removal (RepNR) block 和 camera-specific alignments (CSA)（解决问题 3）</li>
-</ol>
-<p><a class="glightbox" href="https://i.imgur.com/9LcZ3LB.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/9LcZ3LB.png" /></a></p>
-<h3 id="31">3.1 先前的不足和动机<a class="headerlink" href="#31" title="Permanent link">&para;</a></h3>
-<p>基本重讲了一遍，附带有公式。</p>
-<h3 id="32">3.2 预训练<a class="headerlink" href="#32" title="Permanent link">&para;</a></h3>
-<p>使用虚拟相机预训练，更快适应不同相机。</p>
-<p>有 m 个虚拟相机，k-path。</p>
-<p><a class="glightbox" href="https://i.imgur.com/fBSv5Dx.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/fBSv5Dx.png" /></a></p>
-<p>第 k 通道。</p>
-<h3 id="_1">微调<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
-<p>微调以适应<strong>实际噪声</strong>。</p>
+<p>对位置进行编码：</p>
+<p><a class="glightbox" href="https://i.imgur.com/fCf9au1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/fCf9au1.png" /></a></p>
+<p>注意一下，这里的 sin 和 cos 是两个不同的矩阵元素。</p>
+<p>最低位周期最短。</p>
+<p>通过计算，可以发现 $||(p(t)-p(t-1))||_2$ 为仅与 $w$ 有关的常数。</p>
+<p><a class="glightbox" href="https://i.imgur.com/dFLisO0.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/dFLisO0.png" /></a></p>
+<p>补充一下，这里有点难的，这里其实可以理解为由原来的 $y_0=f(x_0)$ 变为了 $y_0=f(x_0, p_0)$，多了一个位置参数。</p>
+<p>为了不接受到未来的知识（例如输入有顺序 $x_0,x_1,x_2$，那么不想让 $y_0$ 收到 $x_1,x_2$ 的信息 $y_1$ 也类似），那么可以在 Alignment 中置为 $-\inf$，这样 Softmax 之后就成 0 了：</p>
+<p><a class="glightbox" href="https://i.imgur.com/H9zzKn9.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/H9zzKn9.png" /></a></p>
+<p>MHA 或叫做 MSA：</p>
+<p><a class="glightbox" href="https://i.imgur.com/f3Vs31v.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/f3Vs31v.png" /></a></p>
+<p>有点像分段并行，中间各自会进行非线性变换，最后会 Concat 在一起。</p>
+<p>好处：</p>
 <ul>
-<li>只用 6 对原始数据</li>
-<li>$3\times 3$ 卷积不再改动</li>
-<li>CSA 的初始化：（IMNR）$$CSA^T = \frac{1}{m}\sum_{i=1}<sup>{m}{CSA</sup>i}$$</li>
-<li>In-model 噪声和 out-of-model 噪声，如前图所示，上面的 $3\times 3$ 卷积是 in-model 噪声处理方法，也就是 OMNR</li>
-<li>先训练 IMNR 再训练 OMNR</li>
+<li>有利于学习特征向量的细节。</li>
+<li>输入有顺序 $x_0, x_1, x_2$，相当于把 Channel 分为了三段（假设 $x_i$ 都是 768 大小，也就是 $32\times 32$）即 Feature Map <strong>分组</strong>，各组做自己的一些操作，做完之后再合并为大的 Feature Map。</li>
 </ul>
-<h3 id="_2">部署<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<p>使用结构重参数化技术，能够在部署时转为 $3\times 3$ 卷积部署。</p>
-<p><a class="glightbox" href="https://i.imgur.com/hQ5O2I7.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/hQ5O2I7.png" /></a></p>
-<p>因此部署代价不会增大。</p>
+<p><a class="glightbox" href="https://i.imgur.com/FKHkSvO.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/FKHkSvO.png" /></a></p>
+<p>RNN 和 Transformer 比较：</p>
+<ul>
+<li>RNNs：<ul>
+<li>(+) LSTMs 在处理长序列时效果不错。  </li>
+<li>(-) 需要一个有序的输入序列  </li>
+<li>(-) 顺序计算:后续隐藏状态只能在计算前一个状态结束后计算。</li>
+</ul>
+</li>
+<li>Transformers:  <ul>
+<li>(+) 在长序列上效果很好。每个注意力计算考虑所有输入。  </li>
+<li>(+) 可以处理无序集合或者通过位置编码处理有序序列。  </li>
+<li>(+) 并行计算: 所有输入的对齐和注意力得分都可以并行计算。  </li>
+<li>(-) 需要大量内存: 对一个单独的自注意力头来说, 需要计算和存储 N x M 个对齐和注意力得分。(但是 GPU 性能不断提高)</li>
+</ul>
+</li>
+</ul>
+<h2 id="transformer">Transformer<a class="headerlink" href="#transformer" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="https://i.imgur.com/dvuYGgo.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/dvuYGgo.png" /></a></p>
+<p>编码：</p>
+<p><a class="glightbox" href="https://i.imgur.com/ueSonRx.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/ueSonRx.png" /></a></p>
+<ul>
+<li>Layer norm 可以减弱聚焦。</li>
+<li>Position encoding 只需要一次。（一次破坏位置不变性就行）（Position encoding 需要有一致性、确定性）</li>
+</ul>
+<p>解码：</p>
+<p><a class="glightbox" href="https://i.imgur.com/iSbFT38.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/iSbFT38.png" /></a></p>
+<p>Masked：防止看见未来。（<strong>有争议</strong>，没有必要 Mask，因为本来就是递归生成的，不存在信息泄露）</p>
+<p>Multi-head：不是自注意力，它跨越了 encoder 的输出。</p>
+<p>实际上是先由 [start] 得到 person，接下来由 [[start], person] 共同得到 [person, wearing]，而不是由 person 直接得到 wearing。（不是图上的 4 个进去 4 个出来）</p>
+<p>甚至可以去除 CNN：</p>
+<p><a class="glightbox" href="https://i.imgur.com/d2Mxcwq.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/d2Mxcwq.png" /></a></p>
+<p>Transformer 被大规模应用：</p>
+<p><a class="glightbox" href="https://i.imgur.com/NepUum1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/NepUum1.png" /></a></p>
+<p>总结：</p>
+<p><a class="glightbox" href="https://i.imgur.com/tN6Fi4d.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/tN6Fi4d.png" /></a></p>
+<ol>
+<li>Attention 让 RNN 强大了许多，不需要 bottleneck。</li>
+<li>通用 attention layer 可以插入很多地方。</li>
+<li>Transformer 非常强大。（使用 self-attention 和 layer norm）</li>
+</ol>
 
 
 

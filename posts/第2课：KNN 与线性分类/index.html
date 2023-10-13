@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://natsunoshion.github.io/posts/CS231n-%E7%AC%94%E8%AE%B02%EF%BC%9A%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E4%B8%8E%E4%BC%98%E5%8C%96%E5%99%A8/">
+        <link rel="canonical" href="https://natsunoshion.github.io/posts/%E7%AC%AC2%E8%AF%BE%EF%BC%9AKNN%20%E4%B8%8E%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB/">
       
       
-        <link rel="prev" href="../CS231n-%E7%AC%94%E8%AE%B01%EF%BC%9A%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/">
+        <link rel="prev" href="../..">
       
       
-        <link rel="next" href="../CS231n-%E7%AC%94%E8%AE%B03%EF%BC%9A%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%BB%8B%E7%BB%8D/">
+        <link rel="next" href="../%E7%AC%AC3%E8%AF%BE%EF%BC%9A%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E4%B8%8E%E4%BC%98%E5%8C%96%E5%99%A8/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>CS231n 笔记2：损失函数与优化器 - natsunoshion 的个人博客</title>
+        <title>第2课：KNN 与线性分类 - natsunoshion 的个人博客</title>
       
     
     
@@ -44,6 +44,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -78,7 +80,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#_1" class="md-skip">
+        <a href="#knn" class="md-skip">
           跳转至
         </a>
       
@@ -114,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CS231n 笔记2：损失函数与优化器
+              第2课：KNN 与线性分类
             
           </span>
         </div>
@@ -201,6 +203,25 @@
       
   
   
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    主页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -217,10 +238,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -231,32 +252,12 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_1">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             CS231n 学习
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../CS231n-%E7%AC%94%E8%AE%B01%EF%BC%9A%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    笔记1：图像分类
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
             
               
                 
@@ -275,7 +276,7 @@
           
   
   <span class="md-ellipsis">
-    笔记2：损失函数与优化器
+    第2课：KNN 与线性分类
   </span>
   
 
@@ -286,7 +287,7 @@
         
   
   <span class="md-ellipsis">
-    笔记2：损失函数与优化器
+    第2课：KNN 与线性分类
   </span>
   
 
@@ -306,37 +307,24 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    损失函数
+  <a href="#knn" class="md-nav__link">
+    KNN
   </a>
   
-    <nav class="md-nav" aria-label="损失函数">
+    <nav class="md-nav" aria-label="KNN">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    超参数
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    基本公式
+    数据集划分
   </a>
-  
-    <nav class="md-nav" aria-label="基本公式">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#svm-multi-class-svm-loss-hinge-loss" class="md-nav__link">
-    多分类 SVM 损失函数（Multi-class SVM loss / Hinge loss）
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#softmax" class="md-nav__link">
-    Softmax 损失函数（交叉熵损失函数）
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -347,28 +335,8 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    优化器
+    线性分类
   </a>
-  
-    <nav class="md-nav" aria-label="优化器">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    随机法
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    梯度下降
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -387,11 +355,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../CS231n-%E7%AC%94%E8%AE%B03%EF%BC%9A%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+      <a href="../%E7%AC%AC3%E8%AF%BE%EF%BC%9A%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E4%B8%8E%E4%BC%98%E5%8C%96%E5%99%A8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    笔记3：神经网络介绍
+    第3课：损失函数与优化器
   </span>
   
 
@@ -407,11 +375,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../CS231n-%E7%AC%94%E8%AE%B04%EF%BC%9A%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="md-nav__link">
+      <a href="../%E7%AC%AC4%E8%AF%BE%EF%BC%9A%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    笔记4：卷积神经网络
+    第4课：神经网络介绍
   </span>
   
 
@@ -427,11 +395,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../CS231n-%E7%AC%94%E8%AE%B05%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CI/" class="md-nav__link">
+      <a href="../%E7%AC%AC5%E8%AF%BE%EF%BC%9A%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    笔记5：训练神经网络I
+    第5课：卷积神经网络
   </span>
   
 
@@ -447,11 +415,151 @@
   
   
     <li class="md-nav__item">
-      <a href="../CS231n-%E7%AC%94%E8%AE%B06%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CII/" class="md-nav__link">
+      <a href="../%E7%AC%AC6%E8%AF%BE%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%881%EF%BC%89/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    笔记6：训练神经网络II
+    第6课：训练神经网络（1）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC7%E8%AF%BE%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%882%EF%BC%89/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第7课：训练神经网络（2）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC8%E8%AF%BE%EF%BC%9ARNN/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第8课：RNN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC9%E8%AF%BE%EF%BC%9AAttention%E5%92%8CTransformer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第9课：Attention和Transformer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC10%E8%AF%BE%EF%BC%9A%E8%A7%86%E9%A2%91%E7%90%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第10课：视频理解
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC11%E8%AF%BE%EF%BC%9A%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%8E%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第11课：目标检测与图像分割
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CNN%E6%9E%B6%E6%9E%84/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CNN架构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EF%BC%88%E8%BF%99%E4%B8%80%E8%AF%BE%E8%A2%AB%E5%88%A0%E6%8E%89%E4%BA%86%EF%BC%89%E7%AC%AC8%E8%AF%BE%EF%BC%9A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%BD%AF%E4%BB%B6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （这一课被删掉了）第8课：深度学习软件
   </span>
   
 
@@ -486,10 +594,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -500,8 +608,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             论文阅读
           </label>
@@ -579,37 +687,24 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    损失函数
+  <a href="#knn" class="md-nav__link">
+    KNN
   </a>
   
-    <nav class="md-nav" aria-label="损失函数">
+    <nav class="md-nav" aria-label="KNN">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    超参数
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
-    基本公式
+    数据集划分
   </a>
-  
-    <nav class="md-nav" aria-label="基本公式">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#svm-multi-class-svm-loss-hinge-loss" class="md-nav__link">
-    多分类 SVM 损失函数（Multi-class SVM loss / Hinge loss）
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#softmax" class="md-nav__link">
-    Softmax 损失函数（交叉熵损失函数）
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
         
@@ -620,28 +715,8 @@
       
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
-    优化器
+    线性分类
   </a>
-  
-    <nav class="md-nav" aria-label="优化器">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    随机法
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    梯度下降
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -660,39 +735,31 @@
                   
 
 
-  <h1>笔记2：损失函数与优化器</h1>
+  <h1>第2课：KNN 与线性分类</h1>
 
-<h2 id="_1">损失函数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<h3 id="_2">基本公式<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
-<div class="arithmatex">\[
-L(W)=\frac{1}{N}\sum_{i=1}^N L_i(f(x_i, W), y_i) + \lambda R(W)
-\]</div>
-<p>补充：（正则项）</p>
-<p><a class="glightbox" href="https://i.imgur.com/WdZaB4n.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/WdZaB4n.png" /></a></p>
-<p>L1 倾向于稀疏，L2 倾向于散布：如 [1, 0, 0, 0] 和 [0.25, 0.25, 0.25, 0.25]。</p>
-<h4 id="svm-multi-class-svm-loss-hinge-loss">多分类 SVM 损失函数（Multi-class SVM loss / Hinge loss）<a class="headerlink" href="#svm-multi-class-svm-loss-hinge-loss" title="Permanent link">&para;</a></h4>
-<div class="arithmatex">\[
-L_i=\sum_{j\neq y_i} max(0, s_j - s_{y_i} + 1)
-\]</div>
-<p>其中 1 为安全距离，<span class="arithmatex">\(s_j\)</span> 为第 <span class="arithmatex">\(j\)</span> 个类别的得分。</p>
-<h4 id="softmax">Softmax 损失函数（交叉熵损失函数）<a class="headerlink" href="#softmax" title="Permanent link">&para;</a></h4>
-<div class="arithmatex">\[
-\begin{aligned}
-L_i &amp;= -\log P(Y=y_i|X=x_i)\\
-&amp;=-\log (\frac{e^{s_{y_i}}}{\sum_j e^{s_j}})
-\end{aligned}
-\]</div>
-<p>与 Hinge 损失函数不同，交叉熵损失函数会始终倾向于提升正确标签的得分（以至于正无穷），减少错误标签的得分（以至于负无穷）。</p>
-<h2 id="_3">优化器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<h3 id="_4">随机法<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
-<p>纯随机找 <span class="arithmatex">\(W\)</span>，很差！</p>
-<h3 id="_5">梯度下降<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>由于在所有样本上进行梯度下降训练效率较低，采用 Stochastic Gradient Descent（随机梯度下降）：</p>
-<div class="arithmatex">\[
-\triangledown_W L(W)=\frac{1}{N}\sum_{i=1}^N \triangledown_W L_i(x_i, y_i, W) + \lambda \triangledown_W R(W)
-\]</div>
-<p>也就是选取一定数量（batch size）的样本进行梯度计算。</p>
-<p>特征提取——卷积神经网络的引入。</p>
+<h2 id="knn">KNN<a class="headerlink" href="#knn" title="Permanent link">&para;</a></h2>
+<h3 id="_1">超参数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ol>
+<li>K 的选取：不宜太大，也不宜太小</li>
+<li>距离计算方法</li>
+</ol>
+<p>通常使用曼哈顿距离（L1 距离）和欧氏距离（L2 距离）：</p>
+<ul>
+<li>L1 距离通常用于坐标有实际意义</li>
+<li>L2 距离用于坐标无明显意义</li>
+</ul>
+<h3 id="_2">数据集划分<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Train Validation Test：
+    <a class="glightbox" href="https://i.imgur.com/4c4in7k.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/4c4in7k.png" /></a></li>
+<li>K-折交叉验证
+    <a class="glightbox" href="https://i.imgur.com/l5huGv7.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/l5huGv7.png" /></a></li>
+</ol>
+<h2 id="_3">线性分类<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p>$$
+Scores=f(x, W)=Wx+b
+$$</p>
+<p>其中 $b$ 为偏置。</p>
 
 
 
@@ -735,11 +802,11 @@ L_i &amp;= -\log P(Y=y_i|X=x_i)\\
     
       <script src="../../assets/javascripts/bundle.726fbb30.min.js"></script>
       
-        <script src="../../javascripts/config.js"></script>
+        <script src="../../javascripts/katex.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
       
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>

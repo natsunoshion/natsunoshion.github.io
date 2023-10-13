@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://natsunoshion.github.io/posts/CS231n-%E7%AC%94%E8%AE%B05%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CI/">
+        <link rel="canonical" href="https://natsunoshion.github.io/posts/%E7%AC%AC11%E8%AF%BE%EF%BC%9A%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B%E4%B8%8E%E5%9B%BE%E5%83%8F%E5%88%86%E5%89%B2/">
       
       
-        <link rel="prev" href="../CS231n-%E7%AC%94%E8%AE%B04%EF%BC%9A%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">
+        <link rel="prev" href="../%E7%AC%AC10%E8%AF%BE%EF%BC%9A%E8%A7%86%E9%A2%91%E7%90%86%E8%A7%A3/">
       
       
-        <link rel="next" href="../CS231n-%E7%AC%94%E8%AE%B06%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CII/">
+        <link rel="next" href="../CNN%E6%9E%B6%E6%9E%84/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>CS231n 笔记5：训练神经网络I - natsunoshion 的个人博客</title>
+        <title>第11课：目标检测与图像分割 - natsunoshion 的个人博客</title>
       
     
     
@@ -44,6 +44,8 @@
         <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
       
     
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -77,11 +79,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#_1" class="md-skip">
-          跳转至
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -114,7 +111,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              CS231n 笔记5：训练神经网络I
+              第11课：目标检测与图像分割
             
           </span>
         </div>
@@ -201,6 +198,25 @@
       
   
   
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    主页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -217,10 +233,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -231,8 +247,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_1">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             CS231n 学习
           </label>
@@ -244,11 +260,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../CS231n-%E7%AC%94%E8%AE%B01%EF%BC%9A%E5%9B%BE%E5%83%8F%E5%88%86%E7%B1%BB/" class="md-nav__link">
+      <a href="../%E7%AC%AC2%E8%AF%BE%EF%BC%9AKNN%20%E4%B8%8E%E7%BA%BF%E6%80%A7%E5%88%86%E7%B1%BB/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    笔记1：图像分类
+    第2课：KNN 与线性分类
   </span>
   
 
@@ -264,11 +280,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../CS231n-%E7%AC%94%E8%AE%B02%EF%BC%9A%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E4%B8%8E%E4%BC%98%E5%8C%96%E5%99%A8/" class="md-nav__link">
+      <a href="../%E7%AC%AC3%E8%AF%BE%EF%BC%9A%E6%8D%9F%E5%A4%B1%E5%87%BD%E6%95%B0%E4%B8%8E%E4%BC%98%E5%8C%96%E5%99%A8/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    笔记2：损失函数与优化器
+    第3课：损失函数与优化器
   </span>
   
 
@@ -284,11 +300,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../CS231n-%E7%AC%94%E8%AE%B03%EF%BC%9A%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
+      <a href="../%E7%AC%AC4%E8%AF%BE%EF%BC%9A%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E4%BB%8B%E7%BB%8D/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    笔记3：神经网络介绍
+    第4课：神经网络介绍
   </span>
   
 
@@ -304,11 +320,111 @@
   
   
     <li class="md-nav__item">
-      <a href="../CS231n-%E7%AC%94%E8%AE%B04%EF%BC%9A%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="md-nav__link">
+      <a href="../%E7%AC%AC5%E8%AF%BE%EF%BC%9A%E5%8D%B7%E7%A7%AF%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    笔记4：卷积神经网络
+    第5课：卷积神经网络
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC6%E8%AF%BE%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%881%EF%BC%89/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第6课：训练神经网络（1）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC7%E8%AF%BE%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%EF%BC%882%EF%BC%89/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第7课：训练神经网络（2）
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC8%E8%AF%BE%EF%BC%9ARNN/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第8课：RNN
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC9%E8%AF%BE%EF%BC%9AAttention%E5%92%8CTransformer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第9课：Attention和Transformer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%AC%AC10%E8%AF%BE%EF%BC%9A%E8%A7%86%E9%A2%91%E7%90%86%E8%A7%A3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    第10课：视频理解
   </span>
   
 
@@ -331,85 +447,15 @@
       
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    笔记5：训练神经网络I
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
-    笔记5：训练神经网络I
+    第11课：目标检测与图像分割
   </span>
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    激活函数
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    数据预处理
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    权重初始化
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bn" class="md-nav__link">
-    BN 层
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    监督学习过程
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    超参数优化
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
       
     </li>
   
@@ -422,11 +468,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../CS231n-%E7%AC%94%E8%AE%B06%EF%BC%9A%E8%AE%AD%E7%BB%83%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9CII/" class="md-nav__link">
+      <a href="../CNN%E6%9E%B6%E6%9E%84/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    笔记6：训练神经网络II
+    CNN架构
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%EF%BC%88%E8%BF%99%E4%B8%80%E8%AF%BE%E8%A2%AB%E5%88%A0%E6%8E%89%E4%BA%86%EF%BC%89%E7%AC%AC8%E8%AF%BE%EF%BC%9A%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E8%BD%AF%E4%BB%B6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    （这一课被删掉了）第8课：深度学习软件
   </span>
   
 
@@ -461,10 +527,10 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -475,8 +541,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             论文阅读
           </label>
@@ -547,56 +613,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    激活函数
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    数据预处理
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    权重初始化
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bn" class="md-nav__link">
-    BN 层
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    监督学习过程
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    超参数优化
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -610,101 +626,9 @@
                   
 
 
-  <h1>笔记5：训练神经网络I</h1>
+  <h1>第11课：目标检测与图像分割</h1>
 
-<h2 id="_1">激活函数<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p><a class="glightbox" href="https://i.imgur.com/Z4iKZnX.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/Z4iKZnX.png" /></a></p>
-<ul>
-<li>Sigmoid：
-<span class="arithmatex">(<span class="arithmatex">\(\frac{1}{1+e^{-x}}\)</span>\)</span>
-特点：<ul>
-<li>“饱和”现象会让梯度消失</li>
-<li>不以 0 中心：这样导致下一层神经元的输入偏向于正值，假设中间某层神经元有
-<span class="arithmatex">\(<span class="arithmatex">\(\text{Output} = f(\sum_i w_i x_i+b)\)</span>\)</span>
-其中 <span class="arithmatex">\(f\)</span> 为激活函数，则该层参数 <span class="arithmatex">\(w_i\)</span> 梯度为
-<span class="arithmatex">\(<span class="arithmatex">\(\begin{aligned}\frac{\partial L}{\partial w_i} &amp;= \frac{\partial L}{\partial f} \frac{\partial f}{\partial (\sum_i w_i x_i+b)} \frac{\partial (\sum_i w_i x_i+b)}{\partial w_i} \\&amp;= \frac{\partial L}{\partial f} \frac{\partial f}{\partial (\sum_i w_i x_i+b)} x_i\end{aligned}\)</span>\)</span>
-注意到 <span class="arithmatex">\(\frac{\partial f}{\partial (\sum_i w_i x_i+b)}\)</span> 和 <span class="arithmatex">\(x_i\)</span> 均恒为正数，故其 <span class="arithmatex">\(w_i\)</span> 的梯度始终与前面的梯度 <span class="arithmatex">\(\frac{\partial L}{\partial f}\)</span> 的符号相同。假设该神经元中有两个参数 <span class="arithmatex">\(w_0, w_1\)</span> 都希望达到最优解，而最优解一个比 <span class="arithmatex">\(w_0\)</span> 大，一个比 <span class="arithmatex">\(w_1\)</span> 小，而两者只能向同一方向移动，也就会导致学习路线曲折，收敛速度慢：<a class="glightbox" href="https://i.imgur.com/A8BOggW.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/A8BOggW.png" /></a></li>
-<li>指数函数计算开销较大</li>
-</ul>
-</li>
-<li>tanh：以 0 为中心，但仍然会饱和</li>
-<li>ReLU：<ul>
-<li>优点：不饱和、计算高效、收敛速度快、生理学上合理</li>
-<li>缺点：不以 0 为中心、小于 0 时依然有梯度消失的问题（<strong>坏死现象</strong>：如果权重初始得不好或者学习率过大，导致某个神经元传给 ReLU 的值小于 0，进而梯度为 0，无法更新参数，神经元坏死）</li>
-<li>解决方法：设置偏置项，或使用 Leaky ReLU、ELU 等</li>
-</ul>
-</li>
-</ul>
-<p>总结：
-- 使用 ReLU，设置好的学习率
-- 使用 Leaky ReLU 或 ELU 或 Maxout
-- 使用 tanh（但这大概率不好）
-- 不要用 Sigmoid</p>
-<h2 id="_2">数据预处理<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<ol>
-<li>数据处理：一般处理至以 0 为中心，而不需要归一化，因为图像像素值都处于差不多的范围内。当然也不会做 PCA 之类的处理，这是为了保留图像的原结构。</li>
-<li>在测试和训练时都会减去中心图像。在训练开始前进行数据预处理操作（也可以采样得到均值）。</li>
-<li>两种方法：<ol>
-<li>图像去均值：<strong>先求出中心图像 image</strong>，这个图像是 <span class="arithmatex">\(H\times W\times 3\)</span> 的，然后每个图像减去中心图像。</li>
-<li>通道去均值：<strong>先求出每个通道的均值</strong>，得到<strong>三个数</strong>，然后每个图像的每个通道的每个像素都减去对应通道的值即可。</li>
-</ol>
-</li>
-</ol>
-<h2 id="_3">权重初始化<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<ul>
-<li>不能全 0，不能全相同值（参数对称问题）</li>
-<li>不能全部初始化为小的随机数（激活值逐渐消失 <span class="arithmatex">\(\rightarrow\)</span> 梯度消失）</li>
-<li>也不能全部很大，否则会饱和</li>
-</ul>
-<p>结论：</p>
-<ul>
-<li>使用 tanh 作为激活函数时，使用 <strong>Xavier 初始化</strong>——从标准高斯取样，并根据输入数量进行缩放；使用 ReLU 作为激活函数，则还需额外除 2（因为一半的神经元失活）</li>
-<li>核心：输入数据方差=输出数据方差</li>
-<li>如何初始化权重问题依然活跃，一般从 Xavier 开始尝试，然后再尝试其他方法</li>
-</ul>
-<h2 id="bn">BN 层<a class="headerlink" href="#bn" title="Permanent link">&para;</a></h2>
-<p>一般在全连接层（或者卷积层）后，激活函数前。</p>
-<p><a class="glightbox" href="https://i.imgur.com/k3afnw4.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/k3afnw4.png" /></a></p>
-<p>对于每一批输入 X，对每一维进行<strong>归一化</strong>。</p>
-<p><a class="glightbox" href="https://i.imgur.com/FQLo3Yx.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/FQLo3Yx.png" /></a></p>
-<p>通过引入学习参数 <span class="arithmatex">\(\beta\)</span> 和 <span class="arithmatex">\(\gamma\)</span>，提升灵活度（控制饱和的量）：</p>
-<p><a class="glightbox" href="https://i.imgur.com/hNO8Nim.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/hNO8Nim.png" /></a></p>
-<h2 id="_4">监督学习过程<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
-<ol>
-<li>数据预处理</li>
-<li>选择神经网络结构</li>
-<li>初始化网络：<ul>
-<li>完整性检查<ul>
-<li>检查损失函数的初始值</li>
-<li>加入正则项，再检查损失函数</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>开始训练：<ol>
-<li>从小的数据集开始，关闭正则项，确保 loss 可能降至接近 0</li>
-<li>开启正则项，寻找合适的学习率：<ul>
-<li>如果 loss 基本不变 <span class="arithmatex">\(\rightarrow\)</span> 学习率太低（这里可能 acc 突变，因为可能突然选中正确的，例如各分类的 Sigmoid 值为 0.11，0.1，0.1，0.1，...，0.1，损失函数基本不变，但 acc升高）</li>
-<li>如果 loss 到了 NaN <span class="arithmatex">\(\rightarrow\)</span> 学习率太高</li>
-<li>一般设置在 1e-3 ~ 1e-5 之间</li>
-</ul>
-</li>
-</ol>
-</li>
-</ol>
-<h2 id="_5">超参数优化<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
-<p>最好的值应当在区间的中间，不应在采样边缘。</p>
-<p>网格搜索 vs. 随机搜索：</p>
-<p><a class="glightbox" href="https://i.imgur.com/CgggKED.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/CgggKED.png" /></a></p>
-<p><strong>随机搜索</strong>更好（如上绿色部分的函数）。</p>
-<p>这里红色的 loss 变化最好。</p>
-<p><a class="glightbox" href="https://i.imgur.com/47Q7tkQ.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/47Q7tkQ.png" /></a></p>
-<p>下面这个图说明网络的初始值不好。</p>
-<p><a class="glightbox" href="https://i.imgur.com/SxTYqGt.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="https://i.imgur.com/SxTYqGt.png" /></a></p>
-<ul>
-<li>还有可能过拟合，可以增大正则化权重</li>
-<li>最后，还可以记录 <span class="arithmatex">\(w\)</span> 更新的幅度，幅度（使用范数比较）为 0.01 差不多比较好</li>
-</ul>
+
 
 
 
@@ -747,11 +671,11 @@
     
       <script src="../../assets/javascripts/bundle.726fbb30.min.js"></script>
       
-        <script src="../../javascripts/config.js"></script>
+        <script src="../../javascripts/katex.js"></script>
       
-        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js"></script>
       
-        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js"></script>
       
     
   <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
