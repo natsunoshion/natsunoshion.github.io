@@ -7,7 +7,7 @@ description: Maybe shiny, bien, c'est la vie.  # Strongly recommended for SEO & 
 
 # TIP ── For local development you can comment out `url`
 # and build with relative paths. In production you want this set.
-url: https://natsunoshion.github.io/
+url: https://natsunoshion.github.io
 
 # --------------------------------------------------
 #  AUTHOR / PROFILE DATA
@@ -131,4 +131,3 @@ plugins:
   - jekyll-seo-tag       # Adds SEO meta tags & JSON-LD
 #   - jekyll-picture-tag   # Responsive images & WebP/AVIF
   # - jekyll-archives      # Year/month archive pages
-
