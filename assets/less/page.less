@@ -35,7 +35,7 @@ html {
 		list-style-type: none;
 		display: inline;
 		margin-right: 25px;
-		a { 
+		a {
 			decoration: none;
 			border-bottom: 0 solid transparent;
 			.transition(all .2s);
@@ -135,12 +135,7 @@ html {
 		border-bottom: 0 solid transparent;
 	}
 	img.bio-photo {
-		.rounded(0); /* 正方形（原为 100px 圆形） */
-		max-width: 100px;
-		max-height: 100px;
-		width: auto;
-		height: auto;
-		display: block;
+		.rounded(100px);
 	}
 }
 .article-author-top {
@@ -190,7 +185,7 @@ html {
 			color: @white;
 			border-bottom: 0 solid transparent;
 		}
-		a { 
+		a {
 			padding: 10px;
 			display: block;
 		}
@@ -215,7 +210,7 @@ html {
 	margin: 1em 0;
 	li {
 		display: inline;
-		a { 
+		a {
 			border-bottom: 0 solid transparent;
 			&:hover {
 				border-bottom: 0 solid transparent;
@@ -244,12 +239,12 @@ html {
 	a.jp-current {
 		font-weight: bold;
 	}
-	a.jp-disabled, 
+	a.jp-disabled,
 	a.jp-disabled:hover {
 	}
-	a.jp-current, 
-	a.jp-current:hover,  
-	a.jp-disabled, 
+	a.jp-current,
+	a.jp-current:hover,
+	a.jp-disabled,
 	a.jp-disabled:hover {
 		cursor: default;
 		background: none;
