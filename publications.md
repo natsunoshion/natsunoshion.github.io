@@ -4,20 +4,20 @@ permalink: /publications/index.html
 title: Publications
 ---
 
-> (†: equal contribution, ~: corresponding author)
+> (*: equal contribution, †: corresponding author)
 
 ## Journal Manuscripts
 
 <div style="display: flex; margin-bottom: 50px; align-items: flex-start; padding: 20px; background-color: #fafafa; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
 <div style="width: 250px; margin-right: 30px; flex-shrink: 0;">
-<img src="images/motionsight.png" alt="MotionSight" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+<img src="{{ site.url }}/images/motionsight.png" alt="MotionSight" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
 </div>
 <div style="flex: 1; line-height: 1.6;">
 <blockquote style="margin: 0 0 15px 0; padding: 15px; background-color: #fff; border-left: 4px solid #8B0000; border-radius: 4px;">
 <p style="margin: 0; font-size: 1.1em;"><strong><em>MotionSight: Boosting Fine-Grained Motion Understanding in Multimodal LLMs.</em></strong> <a href="https://arxiv.org/pdf/2506.01674.pdf">[Paper]</a></p>
 </blockquote>
 
-<p style="margin: 0; font-size: 1em;"><strong>Yipeng Du</strong>*, Tiehan Fan*, Kepan Nan, Rui Xie, Penghao Zhou, Xiang Li, Jian Yang, Zhenheng Yang, Ying Tai <span style="color:#8B0000;"><strong>(ICLR2026)</strong></span></p>
+<p style="margin: 0; font-size: 1em;"><strong>Yipeng Du</strong>*, Tiehan Fan*, Kepan Nan, Rui Xie, Penghao Zhou, Xiang Li, Jian Yang, Zhenheng Yang, Ying Tai† <span style="color:#8B0000;"><strong>(ICLR2026)</strong></span></p>
 </div>
 </div>
 

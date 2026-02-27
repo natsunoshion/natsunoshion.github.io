@@ -9,7 +9,7 @@ title: Hobbies
 ## Piano
 
 <div>
-<img src="/images/piano.JPG">
+<img src="/images/piano-web.jpg" alt="Piano" loading="lazy">
 </div>
 <br>The piano has been a hobby of mine for the past year. My favorite pianist is Yui Morishita (Duke of Pianeet). I especially love his arrangements of [Theme of Love](https://www.youtube.com/watch?v=klF1rHHa6sQ), [GUNBUSTER FANTASY](https://www.youtube.com/watch?v=nD9l4s0c4ig), and [Aoi Tori](https://www.nicovideo.jp/watch/sm1768836).
 

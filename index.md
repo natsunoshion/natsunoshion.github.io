@@ -6,8 +6,8 @@ layout: page
 
 # About Me
 
-I am a MS student 🙂 at **Nanjing University** (2025.09—2028.06 if everything goes as expected), supervised by Prof. [*<font color="#006ab1">Ying Tai</font>*](https://tyshiwo.github.io/index.html). Previously, I received a bachelor degree from **Nankai University** in 2023.06 (Major in computer science and technology 🖥️, Grade: 92.5/100 overall rank: 5/140).
-
+I am a MS student at **Nanjing University** (2025.09—2028.06 if everything goes as expected), supervised by Prof. [*<font color="#006ab1">Ying Tai</font>*](https://tyshiwo.github.io/index.html). Previously, I received a bachelor degree from **Nankai University** in 2025.06 (Major in computer science and technology 🖥️, Grade: 92.5/100 overall rank: 5/140).
+<br>
 I am always open to academic discussions and potential collaborations. Please feel free to reach out to me at **natsunoshion [at] gmail.com**
 
 ---
